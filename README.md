@@ -1,3 +1,3 @@
 This project is an updated version of a simple maze generator using the DFS (Depth-First Search) algorithm—a basic game.<br>
-Available features in the application include generating a maze using DFS from start to end and from end to start, adding a player cell and an end cell (the goal of the maze to solve it), event cells that count toward the score, generating an escape path using the BFS (Breadth-First Search) algorithm, and locking the end cell (which unlocks after the player collects all points). <br>
-Currently under development: implementation escape path using A* algorithm and a random teleport event.
+Available features in the application include generating a maze using DFS from start to end and from end to start, adding a player cell and an end cell (the goal of the maze to solve it), event cells that count toward the score, generating an escape path using the BFS (Breadth-First Search) and A* algorithms, and locking the end cell (which unlocks after the player collects all points). <br>
+Currently under development: random teleport event.
