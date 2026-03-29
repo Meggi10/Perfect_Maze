@@ -1,0 +1,152 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\magda\\Desktop\\Studia\\Animacje i gry komputerowe\\Perfect_maze\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{79DB7075-0D3D-4504-AE66-CF8202FDFED6}|Perfect_maze.csproj|c:\\users\\magda\\desktop\\studia\\animacje i gry komputerowe\\perfect_maze\\talgorithm.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{79DB7075-0D3D-4504-AE66-CF8202FDFED6}|Perfect_maze.csproj|solutionrelative:talgorithm.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{79DB7075-0D3D-4504-AE66-CF8202FDFED6}|Perfect_maze.csproj|C:\\Users\\magda\\Desktop\\Studia\\Animacje i gry komputerowe\\Perfect_maze\\TCell.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{79DB7075-0D3D-4504-AE66-CF8202FDFED6}|Perfect_maze.csproj|solutionrelative:TCell.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{79DB7075-0D3D-4504-AE66-CF8202FDFED6}|Perfect_maze.csproj|C:\\Users\\magda\\Desktop\\Studia\\Animacje i gry komputerowe\\Perfect_maze\\Form2.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{79DB7075-0D3D-4504-AE66-CF8202FDFED6}|Perfect_maze.csproj|solutionrelative:Form2.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{79DB7075-0D3D-4504-AE66-CF8202FDFED6}|Perfect_maze.csproj|C:\\Users\\magda\\Desktop\\Studia\\Animacje i gry komputerowe\\Perfect_maze\\Form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{79DB7075-0D3D-4504-AE66-CF8202FDFED6}|Perfect_maze.csproj|solutionrelative:Form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{79DB7075-0D3D-4504-AE66-CF8202FDFED6}|Perfect_maze.csproj|C:\\Users\\magda\\Desktop\\Studia\\Animacje i gry komputerowe\\Perfect_maze\\TBoard.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{79DB7075-0D3D-4504-AE66-CF8202FDFED6}|Perfect_maze.csproj|solutionrelative:TBoard.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{79DB7075-0D3D-4504-AE66-CF8202FDFED6}|Perfect_maze.csproj|C:\\Users\\magda\\Desktop\\Studia\\Animacje i gry komputerowe\\Perfect_maze\\tboard.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{79DB7075-0D3D-4504-AE66-CF8202FDFED6}|Perfect_maze.csproj|solutionrelative:tboard.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{79DB7075-0D3D-4504-AE66-CF8202FDFED6}|Perfect_maze.csproj|C:\\Users\\magda\\Desktop\\Studia\\Animacje i gry komputerowe\\Perfect_maze\\form2.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{79DB7075-0D3D-4504-AE66-CF8202FDFED6}|Perfect_maze.csproj|solutionrelative:form2.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{79DB7075-0D3D-4504-AE66-CF8202FDFED6}|Perfect_maze.csproj|C:\\Users\\magda\\Desktop\\Studia\\Animacje i gry komputerowe\\Perfect_maze\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{79DB7075-0D3D-4504-AE66-CF8202FDFED6}|Perfect_maze.csproj|solutionrelative:form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 3,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{74946827-37a0-11d2-a273-00c04f8ef4ff}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Form2.cs",
+              "DocumentMoniker": "C:\\Users\\magda\\Desktop\\Studia\\Animacje i gry komputerowe\\Perfect_maze\\Form2.cs",
+              "RelativeDocumentMoniker": "Form2.cs",
+              "ToolTip": "C:\\Users\\magda\\Desktop\\Studia\\Animacje i gry komputerowe\\Perfect_maze\\Form2.cs",
+              "RelativeToolTip": "Form2.cs",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-26T14:21:40.952Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "TAlgorithm.cs",
+              "DocumentMoniker": "C:\\Users\\magda\\Desktop\\Studia\\Animacje i gry komputerowe\\Perfect_maze\\TAlgorithm.cs",
+              "RelativeDocumentMoniker": "TAlgorithm.cs",
+              "ToolTip": "C:\\Users\\magda\\Desktop\\Studia\\Animacje i gry komputerowe\\Perfect_maze\\TAlgorithm.cs",
+              "RelativeToolTip": "TAlgorithm.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAAwAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-23T10:20:29.802Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "TCell.cs",
+              "DocumentMoniker": "C:\\Users\\magda\\Desktop\\Studia\\Animacje i gry komputerowe\\Perfect_maze\\TCell.cs",
+              "RelativeDocumentMoniker": "TCell.cs",
+              "ToolTip": "C:\\Users\\magda\\Desktop\\Studia\\Animacje i gry komputerowe\\Perfect_maze\\TCell.cs",
+              "RelativeToolTip": "TCell.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-19T16:22:52.705Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Form1.cs",
+              "DocumentMoniker": "C:\\Users\\magda\\Desktop\\Studia\\Animacje i gry komputerowe\\Perfect_maze\\Form1.cs",
+              "RelativeDocumentMoniker": "Form1.cs",
+              "ToolTip": "C:\\Users\\magda\\Desktop\\Studia\\Animacje i gry komputerowe\\Perfect_maze\\Form1.cs",
+              "RelativeToolTip": "Form1.cs",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-12T16:25:32.78Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "TBoard.cs",
+              "DocumentMoniker": "C:\\Users\\magda\\Desktop\\Studia\\Animacje i gry komputerowe\\Perfect_maze\\TBoard.cs",
+              "RelativeDocumentMoniker": "TBoard.cs",
+              "ToolTip": "C:\\Users\\magda\\Desktop\\Studia\\Animacje i gry komputerowe\\Perfect_maze\\TBoard.cs",
+              "RelativeToolTip": "TBoard.cs",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-12T15:10:01.502Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "TBoard.cs [Projekt]",
+              "DocumentMoniker": "C:\\Users\\magda\\Desktop\\Studia\\Animacje i gry komputerowe\\Perfect_maze\\TBoard.cs",
+              "RelativeDocumentMoniker": "TBoard.cs",
+              "ToolTip": "C:\\Users\\magda\\Desktop\\Studia\\Animacje i gry komputerowe\\Perfect_maze\\TBoard.cs [Projekt]",
+              "RelativeToolTip": "TBoard.cs [Projekt]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-12T15:09:32.676Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "Form2.cs [Projekt]",
+              "DocumentMoniker": "C:\\Users\\magda\\Desktop\\Studia\\Animacje i gry komputerowe\\Perfect_maze\\Form2.cs",
+              "RelativeDocumentMoniker": "Form2.cs",
+              "ToolTip": "C:\\Users\\magda\\Desktop\\Studia\\Animacje i gry komputerowe\\Perfect_maze\\Form2.cs [Projekt]",
+              "RelativeToolTip": "Form2.cs [Projekt]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-26T14:21:13.83Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "Form1.cs [Projekt]",
+              "DocumentMoniker": "C:\\Users\\magda\\Desktop\\Studia\\Animacje i gry komputerowe\\Perfect_maze\\Form1.cs",
+              "RelativeDocumentMoniker": "Form1.cs",
+              "ToolTip": "C:\\Users\\magda\\Desktop\\Studia\\Animacje i gry komputerowe\\Perfect_maze\\Form1.cs [Projekt]",
+              "RelativeToolTip": "Form1.cs [Projekt]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-12T15:06:33.225Z"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
