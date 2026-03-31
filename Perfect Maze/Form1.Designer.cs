@@ -37,8 +37,9 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
-            this.tBoard1 = new Perfect_maze.TBoard();
             this.button4 = new System.Windows.Forms.Button();
+            this.tBoard1 = new Perfect_maze.TBoard();
+            this.button5 = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // timer1
@@ -140,15 +141,6 @@
             this.label4.Visible = false;
             this.label4.Click += new System.EventHandler(this.label4_Click);
             // 
-            // tBoard1
-            // 
-            this.tBoard1.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
-            this.tBoard1.Location = new System.Drawing.Point(200, 32);
-            this.tBoard1.Name = "tBoard1";
-            this.tBoard1.Reverse = false;
-            this.tBoard1.Size = new System.Drawing.Size(1209, 695);
-            this.tBoard1.TabIndex = 0;
-            // 
             // button4
             // 
             this.button4.Cursor = System.Windows.Forms.Cursors.Hand;
@@ -161,11 +153,34 @@
             this.button4.UseVisualStyleBackColor = true;
             this.button4.Click += new System.EventHandler(this.button4_Click);
             // 
+            // tBoard1
+            // 
+            this.tBoard1.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            this.tBoard1.Location = new System.Drawing.Point(200, 32);
+            this.tBoard1.Name = "tBoard1";
+            this.tBoard1.Reverse = false;
+            this.tBoard1.Size = new System.Drawing.Size(1209, 695);
+            this.tBoard1.TabIndex = 0;
+            // 
+            // button5
+            // 
+            this.button5.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.button5.FlatStyle = System.Windows.Forms.FlatStyle.System;
+            this.button5.Location = new System.Drawing.Point(45, 678);
+            this.button5.Margin = new System.Windows.Forms.Padding(0);
+            this.button5.Name = "button5";
+            this.button5.Size = new System.Drawing.Size(103, 23);
+            this.button5.TabIndex = 9;
+            this.button5.Text = "Exit to main menu";
+            this.button5.UseVisualStyleBackColor = true;
+            this.button5.Click += new System.EventHandler(this.button5_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1572, 793);
+            this.Controls.Add(this.button5);
             this.Controls.Add(this.button4);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label2);
@@ -195,6 +210,7 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.Button button5;
     }
 }
 

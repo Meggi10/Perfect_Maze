@@ -24,17 +24,32 @@ namespace Perfect_maze
 
         private void button1_Click(object sender, EventArgs e)
         {
-
+            Form1 form1 = new Form1();
+            form1.Show();
+            this.Hide();
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
-            
+            Game_Rules game_rules = new Game_Rules();
+            game_rules.Show();
+            this.Hide();
         }
 
         private void label1_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            DialogResult result = MessageBox.Show(
+                "Are you sure, you want to exit?",
+                "Exit",
+                 MessageBoxButtons.YesNo,
+                 MessageBoxIcon.Question);
+            if (result == DialogResult.Yes)
+                Application.Exit();
         }
     }
 }

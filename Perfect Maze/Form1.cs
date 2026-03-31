@@ -105,5 +105,20 @@ namespace Perfect_maze
             algorithmFlag = true;
             timer1.Start();
         }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            DialogResult result = MessageBox.Show(
+                "Are you sure, you want to exit the game?",
+                "Exit",
+                 MessageBoxButtons.YesNo,
+                 MessageBoxIcon.Question);
+            if (result == DialogResult.Yes)
+            {
+                Form2 form2 = new Form2();
+                form2.Show();
+                this.Hide();
+            }
+        }
     }
 }
