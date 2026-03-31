@@ -14,8 +14,7 @@ namespace Perfect_maze
         public static TCell BFS(TCell root, TCell goal)
         {
             var queue = new Queue<TCell>();
-            var explored = new HashSet<TCell>();
-            explored.Add(root);
+            var explored = new HashSet<TCell>() { root };
             queue.Enqueue(root);
             while (queue.Count > 0)
             {
@@ -58,7 +57,8 @@ namespace Perfect_maze
                 foreach (var node in cellsToCheck)
                 {
                     double g = stepFromStart.ContainsKey(node) ? stepFromStart[node] : double.MaxValue;
-                    double f = g + Heuristic(node, goal);
+                    double heuristic = Math.Abs(root.X - goal.X) + Math.Abs(root.Y - goal.Y);
+                    double f = g + heuristic;
                     if (f < lowestF)
                     {
                         lowestF = f;
@@ -85,10 +85,6 @@ namespace Perfect_maze
                 }
             }
             return null;
-        }
-        private static double Heuristic(TCell root, TCell goal)
-        {
-            return Math.Abs(root.X - goal.X) + Math.Abs(root.Y - goal.Y);
         }
     }
 }
