@@ -117,4 +117,16 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="label1.Text" xml:space="preserve">
+    <value>Game rules
+
+Objective: Navigate through the maze from the starting cell to the exit cell. Collect all event cells to unlock the exit and escape the maze!
+Movement: Use the arrow keys to move your player through the maze: Arrow up - Move up, Arrow down - Move down, Arrow Left - Move left, Arrow Right - Move right.
+Cells: Player — Your current position in the maze (lime color), Exit — Your goal! Reach it to win (gold color), Event Cell — Collect these to increase your score (red color), Locked Exit — Exit is locked until all event cells are collected (also gold color)
+Score: Each event cell you collect adds points to your score. Collect them all to unlock the exit!
+Algorithms (Visualization): DFS — Generates the maze path from start to end (or end to start), BFS — Shows the shortest escape path step by step, A* — Shows an alternative optimal path to the exit, Reverse — Plays the path animation backwards.
+Tips: Collect all event cells before heading to the exit, Use BFS or A* to find the escape path if you're stuck, Maze is randomly generated every time — no run is the same!
+
+HAVE FUN!</value>
+  </data>
 </root>
