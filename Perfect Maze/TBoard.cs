@@ -51,7 +51,7 @@ namespace Perfect_maze
                     Cells[x, y] = cell;
                 }
             StartCell = Cells[Rnd.Next(N), Rnd.Next(N)];
-            EndCell = Cells[0, 0];
+            EndCell = Cells[Rnd.Next(N), Rnd.Next(N)];
             EventCell.Clear();
             while (EventCell.Count < EventCount)
             {
@@ -188,7 +188,7 @@ namespace Perfect_maze
             for (int y = 0; y < N; y++)
                 for (int x = 0; x < N; x++)
                     Cells[x, y] = new TCell() { X = x, Y = y };
-            EndCell = Cells[0, 0];
+            EndCell = Cells[Rnd.Next(N), Rnd.Next(N)];
             StartCell = Cells[Rnd.Next(N), Rnd.Next(N)];
             EventCell.Clear();
             while (EventCell.Count < EventCount)
