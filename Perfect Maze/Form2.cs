@@ -26,14 +26,14 @@ namespace Perfect_maze
         {
             Form1 form1 = new Form1();
             form1.Show();
-            Hide();
+            this.Hide();
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
             Game_Rules game_rules = new Game_Rules();
             game_rules.Show();
-            Hide();
+            this.Hide();
         }
 
         private void label1_Click(object sender, EventArgs e)
@@ -50,13 +50,6 @@ namespace Perfect_maze
                  MessageBoxIcon.Question);
             if (result == DialogResult.Yes)
                 Application.Exit();
-        }
-
-        private void button4_Click(object sender, EventArgs e)
-        {
-            Credits credits = new Credits();
-            credits.Show();
-            Hide();
         }
     }
 }
