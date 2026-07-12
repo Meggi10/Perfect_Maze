@@ -14,7 +14,7 @@ namespace Perfect_maze
 {
     public partial class TBoard : UserControl
     {
-        public static int N = 20;
+        public static int N = 25;
         public static float chamberSize = 0.5f;
         public TCell[,] Cells = new TCell[N, N];
         public TCell StartCell;
@@ -51,7 +51,11 @@ namespace Perfect_maze
                     Cells[x, y] = cell;
                 }
             StartCell = Cells[Rnd.Next(N), Rnd.Next(N)];
-            EndCell = Cells[Rnd.Next(N), Rnd.Next(N)];
+            do
+            {
+                EndCell = Cells[Rnd.Next(N), Rnd.Next(N)];
+            }
+            while (EndCell == StartCell);
             EventCell.Clear();
             while (EventCell.Count < EventCount)
             {
@@ -164,19 +168,13 @@ namespace Perfect_maze
         }
         public void EscapePathBFS()
         {
-            foreach (var cell in Cells)
-                cell.Parent = null;
-            var goalCell = TAlgorithm.BFS(StartCell, EndCell);
-            algorithmPath = goalCell != null ? TAlgorithm.GetPath(goalCell) : new List<TCell>();
+            algorithmPath = TAlgorithm.BFS(StartCell, EndCell) ?? new List<TCell>();
             AnimAlgoritmStep = 0;
             Invalidate();
         }
         public void EscapePathAStar()
         {
-            foreach (var cell in Cells)
-                cell.Parent = null;
-            var path = TAlgorithm.AStar(StartCell, EndCell);
-            algorithmPath = path ?? new List<TCell>();
+            algorithmPath = TAlgorithm.AStar(StartCell, EndCell) ?? new List<TCell>();
             AnimAlgoritmStep = 0;
             Invalidate();
         }
