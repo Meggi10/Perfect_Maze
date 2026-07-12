@@ -51,5 +51,12 @@ namespace Perfect_maze
             if (result == DialogResult.Yes)
                 Application.Exit();
         }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            Credits credits = new Credits();
+            credits.Show();
+            this.Hide();
+        }
     }
 }
