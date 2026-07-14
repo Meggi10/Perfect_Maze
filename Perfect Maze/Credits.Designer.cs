@@ -68,7 +68,7 @@
             this.textBox1.Size = new System.Drawing.Size(1256, 710);
             this.textBox1.TabIndex = 5;
             this.textBox1.Text = "Credits\r\n\r\nProgramming\r\nMagdalena Leśniewska\r\n\r\nBased on “Animacje i Gry Komputer" +
-    "owe” course\r\nInstructor: Robert Świta\r\n\r\nMusic\r\nMaksym";
+    "owe” course\r\nInstructor: Robert Świta\r\n\r\nMusic\r\nMaksym Kulchytskyi";
             this.textBox1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
