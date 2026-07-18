@@ -42,6 +42,8 @@
             this.tBoard1 = new Perfect_maze.TBoard();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.label5 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // timer1
@@ -53,12 +55,12 @@
             // 
             this.button1.Cursor = System.Windows.Forms.Cursors.Hand;
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.System;
-            this.button1.Location = new System.Drawing.Point(46, 214);
+            this.button1.Location = new System.Drawing.Point(1441, 46);
             this.button1.Margin = new System.Windows.Forms.Padding(0);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(103, 23);
             this.button1.TabIndex = 1;
-            this.button1.Text = "Creation Path";
+            this.button1.Text = "Creation Path - DFS";
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
@@ -66,11 +68,11 @@
             // 
             this.button2.Cursor = System.Windows.Forms.Cursors.Hand;
             this.button2.FlatStyle = System.Windows.Forms.FlatStyle.System;
-            this.button2.Location = new System.Drawing.Point(46, 262);
+            this.button2.Location = new System.Drawing.Point(1441, 80);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(103, 37);
             this.button2.TabIndex = 2;
-            this.button2.Text = "Reverse Creation Path";
+            this.button2.Text = "Reverse Creation Path - DFS";
             this.button2.UseVisualStyleBackColor = true;
             this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
@@ -78,11 +80,11 @@
             // 
             this.button3.Cursor = System.Windows.Forms.Cursors.Hand;
             this.button3.FlatStyle = System.Windows.Forms.FlatStyle.System;
-            this.button3.Location = new System.Drawing.Point(45, 321);
+            this.button3.Location = new System.Drawing.Point(1440, 131);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(103, 25);
             this.button3.TabIndex = 3;
-            this.button3.Text = "Espace Path BFS";
+            this.button3.Text = "Espace Path - BFS";
             this.button3.UseVisualStyleBackColor = true;
             this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
@@ -96,10 +98,10 @@
             this.label1.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.label1.Font = new System.Drawing.Font("MS UI Gothic", 48F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.label1.ForeColor = System.Drawing.Color.Black;
-            this.label1.Location = new System.Drawing.Point(46, 78);
+            this.label1.Location = new System.Drawing.Point(34, 34);
             this.label1.Margin = new System.Windows.Forms.Padding(0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(103, 64);
+            this.label1.Size = new System.Drawing.Size(103, 59);
             this.label1.TabIndex = 4;
             this.label1.Text = "0";
             this.label1.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
@@ -110,7 +112,7 @@
             this.label2.BackColor = System.Drawing.Color.DarkRed;
             this.label2.Font = new System.Drawing.Font("Modern No. 20", 18F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.Transparent;
-            this.label2.Location = new System.Drawing.Point(59, 51);
+            this.label2.Location = new System.Drawing.Point(49, 9);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(70, 25);
             this.label2.TabIndex = 5;
@@ -119,9 +121,10 @@
             // label3
             // 
             this.label3.BackColor = System.Drawing.Color.DarkRed;
-            this.label3.Location = new System.Drawing.Point(18, 32);
+            this.label3.Dock = System.Windows.Forms.DockStyle.Left;
+            this.label3.Location = new System.Drawing.Point(0, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(162, 695);
+            this.label3.Size = new System.Drawing.Size(162, 788);
             this.label3.TabIndex = 6;
             // 
             // label4
@@ -131,9 +134,9 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.label4.BackColor = System.Drawing.Color.GreenYellow;
             this.label4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label4.Location = new System.Drawing.Point(20, 146);
+            this.label4.Location = new System.Drawing.Point(2, 98);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(159, 27);
+            this.label4.Size = new System.Drawing.Size(159, 22);
             this.label4.TabIndex = 7;
             this.label4.Text = "\r\n";
             this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -143,11 +146,11 @@
             // 
             this.button4.Cursor = System.Windows.Forms.Cursors.Hand;
             this.button4.FlatStyle = System.Windows.Forms.FlatStyle.System;
-            this.button4.Location = new System.Drawing.Point(45, 374);
+            this.button4.Location = new System.Drawing.Point(1440, 171);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(103, 25);
             this.button4.TabIndex = 8;
-            this.button4.Text = "Espace Path A*";
+            this.button4.Text = "Espace Path - A*";
             this.button4.UseVisualStyleBackColor = true;
             this.button4.Click += new System.EventHandler(this.button4_Click);
             // 
@@ -155,7 +158,7 @@
             // 
             this.button5.Cursor = System.Windows.Forms.Cursors.Hand;
             this.button5.FlatStyle = System.Windows.Forms.FlatStyle.System;
-            this.button5.Location = new System.Drawing.Point(45, 678);
+            this.button5.Location = new System.Drawing.Point(1440, 753);
             this.button5.Margin = new System.Windows.Forms.Padding(0);
             this.button5.Name = "button5";
             this.button5.Size = new System.Drawing.Size(103, 23);
@@ -167,10 +170,11 @@
             // tBoard1
             // 
             this.tBoard1.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
-            this.tBoard1.Location = new System.Drawing.Point(200, 32);
+            this.tBoard1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tBoard1.Location = new System.Drawing.Point(162, 0);
             this.tBoard1.Name = "tBoard1";
             this.tBoard1.Reverse = false;
-            this.tBoard1.Size = new System.Drawing.Size(1209, 695);
+            this.tBoard1.Size = new System.Drawing.Size(1248, 788);
             this.tBoard1.TabIndex = 0;
             // 
             // comboBox1
@@ -181,7 +185,7 @@
             "Easy",
             "Medium",
             "Hard"});
-            this.comboBox1.Location = new System.Drawing.Point(45, 449);
+            this.comboBox1.Location = new System.Drawing.Point(34, 159);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(102, 21);
             this.comboBox1.TabIndex = 10;
@@ -191,20 +195,43 @@
             // 
             this.label5.AutoSize = true;
             this.label5.BackColor = System.Drawing.Color.DarkRed;
-            this.label5.Font = new System.Drawing.Font("Modern No. 20", 18F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Font = new System.Drawing.Font("Modern No. 20", 14.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.ForeColor = System.Drawing.Color.Transparent;
-            this.label5.Location = new System.Drawing.Point(59, 421);
+            this.label5.Location = new System.Drawing.Point(4, 131);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(71, 25);
+            this.label5.Size = new System.Drawing.Size(153, 21);
             this.label5.TabIndex = 11;
-            this.label5.Text = "Level";
+            this.label5.Text = "Difficulty Level";
+            // 
+            // label6
+            // 
+            this.label6.BackColor = System.Drawing.Color.DarkRed;
+            this.label6.Dock = System.Windows.Forms.DockStyle.Right;
+            this.label6.Location = new System.Drawing.Point(1410, 0);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(162, 788);
+            this.label6.TabIndex = 12;
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.BackColor = System.Drawing.Color.DarkRed;
+            this.label7.Font = new System.Drawing.Font("Modern No. 20", 18F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.ForeColor = System.Drawing.Color.Transparent;
+            this.label7.Location = new System.Drawing.Point(1429, 9);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(131, 25);
+            this.label7.TabIndex = 13;
+            this.label7.Text = "Algorithms";
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1572, 793);
+            this.ClientSize = new System.Drawing.Size(1572, 788);
             this.ControlBox = false;
+            this.Controls.Add(this.label7);
+            this.Controls.Add(this.tBoard1);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.comboBox1);
             this.Controls.Add(this.button5);
@@ -215,8 +242,8 @@
             this.Controls.Add(this.button3);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
-            this.Controls.Add(this.tBoard1);
             this.Controls.Add(this.label3);
+            this.Controls.Add(this.label6);
             this.Name = "Form1";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Maze";
@@ -240,6 +267,8 @@
         private System.Windows.Forms.Button button5;
         private System.Windows.Forms.ComboBox comboBox1;
         private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label label7;
     }
 }
 
