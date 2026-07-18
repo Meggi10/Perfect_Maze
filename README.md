@@ -1,4 +1,4 @@
-<b>Maze Game</b><br><br>
+<b>Maze Game</b><br>
 
 This project is an updated version of a simple maze generator based on the <b>DFS (Depth-First Search)</b> algorithm, expanded into a small maze game.
 
