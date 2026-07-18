@@ -121,19 +121,41 @@
     <value>True</value>
   </metadata>
   <data name="textBox1.Text" xml:space="preserve">
-    <value>Game rules
+    <value>Game Rules
 
-Objective: Navigate through the maze from the starting cell to the exit cell. Collect all event cells to unlock the exit and escape the maze!
+Objective
+Navigate through the maze from the starting cell to the exit cell. Collect all event cells to unlock the exit and escape the maze!
 
-Movement: Use the arrow keys to move your player through the maze: Arrow up - Move up, Arrow down - Move down, Arrow Left - Move left, Arrow Right - Move right.
+Difficulty Levels
+Choose a difficulty level before starting the game. Each difficulty offers a different maze size and number of event cells. Changing the difficulty starts a new game and resets your current score to 0.
 
-Cells: Player — Your current position in the maze (lime color), Exit — Your goal! Reach it to win (gold color), Event Cell — Collect these to increase your score (red color), Locked Exit — Exit is locked until all event cells are collected (also gold color)
+Movement
+Use the arrow keys to move your player through the maze:
+Arrow Up – Move up
+Arrow Down – Move down
+Arrow Left – Move left
+Arrow Right – Move right
 
-Score: Each event cell you collect adds points to your score. Collect them all to unlock the exit!
+Cells
+Player – Your current position in the maze (lime color).
+Exit – Your goal! Reach it to win (gold color).
+Locked Exit – The exit remains locked until all event cells are collected (gold color).
+Event Cell – Collect these to earn points (red color).
 
-Algorithms (Visualization): DFS — Generates the maze path from start to end (or end to start), BFS — Shows the shortest escape path step by step, A* — Shows an alternative optimal path to the exit, Reverse — Plays the path animation backwards.
+Score
+Each event cell you collect increases your score. Collect all event cells to unlock the exit.
+Note: If you change the difficulty level during the game, a new maze is generated and your score is reset to 0.
 
-Tips: Collect all event cells before heading to the exit, Use BFS or A* to find the escape path if you're stuck, Maze is randomly generated every time — no run is the same!
+Algorithms (Visualization)
+DFS – Generates the maze path from start to end (or end to start).
+BFS – Shows the shortest escape path step by step.
+A* – Shows an alternative optimal path to the exit.
+Reverse – Plays the path animation backwards.
+
+Tips
+Collect all event cells before heading to the exit.
+Use BFS or A* to find the escape path if you're stuck.
+Every maze is randomly generated, so no two runs are the same.
 
 HAVE FUN!</value>
   </data>
