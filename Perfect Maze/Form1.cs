@@ -18,7 +18,7 @@ namespace Perfect_maze
         private bool algorithmFlag = false;
         int selectedIdx;
         private readonly TGameSoundtrack Track = new TGameSoundtrack();
-        private readonly TSyntezator Syntezator = new TSyntezator();
+        //private readonly TSyntezator Syntezator = new TSyntezator();
         public Form1()
         {
             InitializeComponent();
