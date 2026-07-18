@@ -14,13 +14,13 @@ namespace Perfect_maze
 {
     public partial class TBoard : UserControl
     {
-        public static int N = 25;
+        public static int N = 30;
         public static float chamberSize = 0.5f;
         public TCell[,] Cells = new TCell[N, N];
         public TCell StartCell;
         public TCell EndCell;
         public List<TCell> EventCell = new List<TCell>();
-        public int EventCount = 10;
+        public static int EventCount = 10;
         public static Random Rnd = new Random();
         public List<TCell> Path;
         public int PathCount;
@@ -40,6 +40,7 @@ namespace Perfect_maze
         }
         public void Build()
         {
+            //Cells = new TCell[N, N];
             algorithmPath = new List<TCell>();
             AnimAlgoritmStep = 0;
             for (int y = 0; y < N; y++)
@@ -110,6 +111,8 @@ namespace Perfect_maze
                 }
             }
             PathCount = Path.Count;
+            this.score = 0;
+            this.ScoreChanged?.Invoke(this.score);
         }
         protected override void OnPreviewKeyDown(PreviewKeyDownEventArgs e)
         {
@@ -316,8 +319,8 @@ namespace Perfect_maze
             var eventsBrush = new SolidBrush(Color.Red);
             var rc_S = new RectangleF(StartCell.X, StartCell.Y, chamberSize, chamberSize);
             var rc_E = new RectangleF(EndCell.X, EndCell.Y, chamberSize, chamberSize);
-            e.Graphics.FillRectangle(startBrush, rc_S);
             e.Graphics.FillRectangle(endBrush, rc_E);
+            e.Graphics.FillRectangle(startBrush, rc_S);
             foreach (var events in EventCell)
             {
                 var rc_Events = new RectangleF(events.X, events.Y, chamberSize, chamberSize);
