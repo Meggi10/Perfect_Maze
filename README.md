@@ -5,7 +5,7 @@ This project is an updated version of a simple maze generator based on the **DFS
 <br><B>Features<B><br>
 <ul type = "circle">
   <li>
-    Maze generation using **DFS** (from start to end and from end to start).
+    <li>Maze generation using **DFS** (from start to end and from end to start).</li>
     Player and exit cells.
     Event cells that increase the player's score.
     Locked exit that unlocks only after all event cells have been collected.
