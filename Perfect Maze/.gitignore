@@ -363,3 +363,9 @@ MigrationBackup/
 FodyWeavers.xsd
 
 .vs/
+bin/Debug/Tracks/
+
+[Bb]in/
+[Ob]j/
+*.user
+*.suo
