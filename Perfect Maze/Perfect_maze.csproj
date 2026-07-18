@@ -92,6 +92,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Credits.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Credits.Designer.cs">
+      <DependentUpon>Credits.cs</DependentUpon>
+    </Compile>
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -120,6 +126,15 @@
       <DependentUpon>TBoard.cs</DependentUpon>
     </Compile>
     <Compile Include="TCell.cs" />
+    <Compile Include="TGameSoundtrack.cs" />
+    <Compile Include="TLoopStream.cs" />
+    <Compile Include="TSimpleMidiSynth.cs" />
+    <Compile Include="TSquareOscillator.cs" />
+    <Compile Include="TSyntezator.cs" />
+    <Compile Include="TTriangleOscilator.cs" />
+    <EmbeddedResource Include="Credits.resx">
+      <DependentUpon>Credits.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
