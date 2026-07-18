@@ -16,6 +16,9 @@ namespace Perfect_maze
         private bool reverseFlag = false;
         public int score = 0;
         private bool algorithmFlag = false;
+        int selectedIdx;
+        private readonly TGameSoundtrack Track = new TGameSoundtrack();
+        private readonly TSyntezator Syntezator = new TSyntezator();
         public Form1()
         {
             InitializeComponent();
@@ -23,6 +26,7 @@ namespace Perfect_maze
             tBoard1.AllPointsCollected += () => label4.Visible = true;
             label4.Text = "Points collected! Go to the exit!";
             tBoard1.GameReset += () => label4.Visible = false;
+            Track.Play("Tracks/Project_73.mp3", volume: 0.5f);
         }
 
         private void timer1_Tick(object sender, EventArgs e)
@@ -79,26 +83,6 @@ namespace Perfect_maze
             timer1.Start();
         }
 
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label2_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label3_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label4_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void button4_Click(object sender, EventArgs e)
         {
             tBoard1.EscapePathAStar();
@@ -115,9 +99,42 @@ namespace Perfect_maze
                  MessageBoxIcon.Question);
             if (result == DialogResult.Yes)
             {
+                Track.Stop();
                 Form2 form2 = new Form2();
                 form2.Show();
-                this.Hide();
+                Hide();
+            }
+        }
+
+        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            selectedIdx = comboBox1.SelectedIndex;
+            if (selectedIdx == 0)
+                selectedIdx = TBoard.Rnd.Next(1, 4);
+            DialogResult result = MessageBox.Show(
+                "Are you sure, you want change the difficulty level? All points will be lost!",
+                "Change",
+                MessageBoxButtons.YesNo,
+                MessageBoxIcon.Warning);
+            if (result == DialogResult.Yes)
+            {
+                switch (selectedIdx)
+                {
+                    case 1:
+                        TBoard.N = 10;
+                        TBoard.EventCount = 5;
+                        break;
+                    case 2:
+                        TBoard.N = 20;
+                        TBoard.EventCount = 10;
+                        break;
+                    case 3:
+                        TBoard.N = 30;
+                        TBoard.EventCount = 15;
+                        break;
+                }
+                tBoard1.Build();
+                tBoard1.Invalidate();
             }
         }
     }
