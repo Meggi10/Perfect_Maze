@@ -1,10 +1,9 @@
-<b>Maze Game</b><br>
+<h1><b>Maze Game</b><br></h1>
 
 This project is an updated version of a simple maze generator based on the <b>DFS (Depth-First Search)</b> algorithm, expanded into a small maze game.
 
 <br>
-
-<b>Features</b>
+<b><h2>Features</h2></b>
 <ul>
   <li>Maze generation using <b>DFS</b> (from start to end and from end to start).</li>
   <li>Player and exit cells.</li>
@@ -17,7 +16,7 @@ This project is an updated version of a simple maze generator based on the <b>DF
   <li>In-game background music.</li>
 </ul>
 
-<b>Currently under development</b>
+<b><h2>Currently under development</h2></b>
 <ul>
   <li>Further improvements and expansion of the <b>Game Rules</b> section.</li>
   <li>Further improvements of UI and other features.</li>
