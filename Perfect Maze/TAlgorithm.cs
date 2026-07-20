@@ -79,6 +79,52 @@ namespace Perfect_maze
             }
             return null;
         }
+        public static List<TCell> GenerationMazeDFS(TCell[,] cells, int n, TCell startCell, Random rnd)
+        {
+            var depthCells = new List<TCell>();
+            var path = new List<TCell>();
+            var actCell = startCell;
+            depthCells.Add(actCell);
+            while (depthCells.Count > 0)
+            {
+                path.Add(actCell);
+                var freeCells = new List<TCell>();
+                if (actCell.X > 0)
+                {
+                    var neighbour = cells[actCell.X - 1, actCell.Y];
+                    if (neighbour.Connected.Count == 0) freeCells.Add(neighbour);
+                }
+                if (actCell.X < n - 1)
+                {
+                    var neighbour = cells[actCell.X + 1, actCell.Y];
+                    if (neighbour.Connected.Count == 0) freeCells.Add(neighbour);
+                }
+                if (actCell.Y > 0)
+                {
+                    var neighbour = cells[actCell.X, actCell.Y - 1];
+                    if (neighbour.Connected.Count == 0) freeCells.Add(neighbour);
+                }
+                if (actCell.Y < n - 1)
+                {
+                    var neighbour = cells[actCell.X, actCell.Y + 1];
+                    if (neighbour.Connected.Count == 0) freeCells.Add(neighbour);
+                }
+                if (freeCells.Count > 0)
+                {
+                    var neighbour = freeCells[rnd.Next(freeCells.Count)];
+                    actCell.Connected.Add(neighbour);
+                    neighbour.Connected.Add(actCell);
+                    depthCells.Add(actCell);
+                    actCell = neighbour;
+                }
+                else
+                {
+                    actCell = depthCells.Last();
+                    depthCells.RemoveAt(depthCells.Count - 1);
+                }
+            }
+            return path;
+        }
         private static List<TCell> ReconstructPath(Dictionary<TCell, TCell> cameFrom, TCell goal)
         {
             var path = new List<TCell> { goal };
