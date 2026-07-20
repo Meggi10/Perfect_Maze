@@ -84,30 +84,24 @@ namespace Perfect_maze
             var depthCells = new List<TCell>();
             var path = new List<TCell>();
             var actCell = startCell;
+            var directions = new[] { (-1, 0), (1, 0), (0, -1), (0, 1) };
             depthCells.Add(actCell);
             while (depthCells.Count > 0)
             {
                 path.Add(actCell);
                 var freeCells = new List<TCell>();
-                if (actCell.X > 0)
+                foreach (var (dirX, dirY) in directions)
                 {
-                    var neighbour = cells[actCell.X - 1, actCell.Y];
-                    if (neighbour.Connected.Count == 0) freeCells.Add(neighbour);
-                }
-                if (actCell.X < n - 1)
-                {
-                    var neighbour = cells[actCell.X + 1, actCell.Y];
-                    if (neighbour.Connected.Count == 0) freeCells.Add(neighbour);
-                }
-                if (actCell.Y > 0)
-                {
-                    var neighbour = cells[actCell.X, actCell.Y - 1];
-                    if (neighbour.Connected.Count == 0) freeCells.Add(neighbour);
-                }
-                if (actCell.Y < n - 1)
-                {
-                    var neighbour = cells[actCell.X, actCell.Y + 1];
-                    if (neighbour.Connected.Count == 0) freeCells.Add(neighbour);
+                    int neighX = actCell.X + dirX;
+                    int neighY = actCell.Y + dirY;
+                    if (neighX >= 0 && neighX < n && neighY >= 0 && neighY < n)
+                    {
+                        var neighbour = cells[neighX, neighY];
+                        if (neighbour.Connected.Count == 0)
+                        {
+                            freeCells.Add(neighbour);
+                        }
+                    }
                 }
                 if (freeCells.Count > 0)
                 {
