@@ -40,7 +40,6 @@ namespace Perfect_maze
         }
         public void Build()
         {
-            //Cells = new TCell[N, N];
             algorithmPath = new List<TCell>();
             AnimAlgoritmStep = 0;
             for (int y = 0; y < N; y++)
@@ -64,55 +63,10 @@ namespace Perfect_maze
                 if (nEvents != StartCell &&  nEvents != EndCell && !EventCell.Contains(nEvents))
                     EventCell.Add(nEvents);
             }
-            var depthCells = new List<TCell>();
-            var actCell = StartCell;
-            depthCells.Add(actCell);
-            Path = new List<TCell>();
-            while (depthCells.Count > 0)
-            {
-                Path.Add(actCell);
-                var freeCells = new List<TCell>();
-                if (actCell.X > 0)
-                {
-                    var neighbour = Cells[actCell.X - 1, actCell.Y];
-                    if (neighbour.Connected.Count == 0)
-                        freeCells.Add(neighbour);
-                }
-                if (actCell.X < N - 1)
-                {
-                    var neighbour = Cells[actCell.X + 1, actCell.Y];
-                    if (neighbour.Connected.Count == 0)
-                        freeCells.Add(neighbour);
-                }
-                if (actCell.Y > 0)
-                {
-                    var neighbour = Cells[actCell.X, actCell.Y - 1];
-                    if (neighbour.Connected.Count == 0)
-                        freeCells.Add(neighbour);
-                }
-                if (actCell.Y < N - 1)
-                {
-                    var neighbour = Cells[actCell.X, actCell.Y + 1];
-                    if (neighbour.Connected.Count == 0)
-                        freeCells.Add(neighbour);
-                }
-                if (freeCells.Count > 0)
-                {
-                    var neighbour = freeCells[Rnd.Next(freeCells.Count)];
-                    actCell.Connected.Add(neighbour);
-                    neighbour.Connected.Add(actCell);
-                    depthCells.Add(actCell);
-                    actCell = neighbour;
-                }
-                else
-                {
-                    actCell = depthCells.Last();
-                    depthCells.RemoveAt(depthCells.Count - 1);
-                }
-            }
+            Path = TAlgorithm.GenerationMazeDFS(Cells, N, StartCell, Rnd);
             PathCount = Path.Count;
-            this.score = 0;
-            this.ScoreChanged?.Invoke(this.score);
+            score = 0;
+            ScoreChanged?.Invoke(score);
         }
         protected override void OnPreviewKeyDown(PreviewKeyDownEventArgs e)
         {
@@ -155,7 +109,6 @@ namespace Perfect_maze
                             if (EventCell.Count == 0)
                                 AllPointsCollected?.Invoke();
                         }
-
                         if (StartCell == EndCell)
                         {
                             MessageBox.Show("Congratulations!", "Maze solved!");
