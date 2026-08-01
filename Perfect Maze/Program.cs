@@ -16,7 +16,7 @@ namespace Perfect_maze
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Form2());
+            Application.Run(new Main_Menu());
         }
     }
 }
