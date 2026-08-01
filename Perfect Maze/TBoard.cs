@@ -106,6 +106,8 @@ namespace Perfect_maze
                             score++;
                             EventCell.Remove(StartCell);
                             ScoreChanged?.Invoke(score);
+                            if (!EventCell.Contains(StartCell))
+                                StartCell = Cells[Rnd.Next(N), Rnd.Next(N)];
                             if (EventCell.Count == 0)
                                 AllPointsCollected?.Invoke();
                         }
