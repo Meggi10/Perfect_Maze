@@ -105,7 +105,7 @@
             this.Controls.Add(this.label1);
             this.Name = "Game_Rules";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Game_Rules";
+            this.Text = "Game Rules";
             this.ResumeLayout(false);
             this.PerformLayout();
 
