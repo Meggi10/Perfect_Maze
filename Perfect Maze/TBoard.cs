@@ -98,30 +98,28 @@ namespace Perfect_maze
                 if (StartCell.Connected.Contains(neighbour))
                 {
                     StartCell = neighbour;
-                    if (neighbour == EndCell && EventCell.Count > 0) { }
-                    else
+                    if (EventCell.Remove(StartCell) && neighbour != EndCell)
                     {
-                        if (EventCell.Contains(StartCell))
+                        score++;
+                        ScoreChanged?.Invoke(score);
+                        do
                         {
-                            score++;
-                            EventCell.Remove(StartCell);
-                            ScoreChanged?.Invoke(score);
-                            if (!EventCell.Contains(StartCell))
-                                StartCell = Cells[Rnd.Next(N), Rnd.Next(N)];
-                            if (EventCell.Count == 0)
-                                AllPointsCollected?.Invoke();
+                            StartCell = Cells[Rnd.Next(N), Rnd.Next(N)];
                         }
-                        if (StartCell == EndCell)
-                        {
-                            MessageBox.Show("Congratulations!", "Maze solved!");
-                            score = 0;
-                            ScoreChanged?.Invoke(score);
-                            Reset();
-                            GameReset?.Invoke();
-                        }
+                        while (EventCell.Contains(StartCell) && StartCell != EndCell);
+                        if (EventCell.Count == 0)
+                            AllPointsCollected?.Invoke();
                     }
-                    Invalidate();
                 }
+                if (StartCell == EndCell && EventCell.Count == 0)
+                {
+                    MessageBox.Show("Congratulations!", "Maze solved!");
+                    score = 0;
+                    ScoreChanged?.Invoke(score);
+                    Reset();
+                    GameReset?.Invoke();
+                }
+                Invalidate();
             }
         }
         public void EscapePathBFS()
