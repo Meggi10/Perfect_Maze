@@ -24,9 +24,11 @@ namespace Perfect_maze
         public override int Read(byte[] buffer, int offset, int count)
         {
             int totalBytesRead = 0;
+            int offSet = offset + totalBytesRead;
+            int totalCount = count - totalBytesRead;
             while (totalBytesRead < count)
             {
-                int bytesRead = Stream.Read(buffer, offset + totalBytesRead, count - totalBytesRead);
+                int bytesRead = Stream.Read(buffer, offSet, totalCount);
                 if (bytesRead == 0)
                 {
                     if (Stream.Position == 0)
