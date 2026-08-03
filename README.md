@@ -29,7 +29,7 @@ This project is an updated version of a simple maze generator based on the <b>DF
 <h2><b>UI & Mechanics</b></h2>
 
 <p align="center">
-  <img src="Doc/Images/Main_Menu.png" alt="Main Menu" width="65%"/>
+  <img src="Doc/Images/Main_menu.png" alt="Main Menu" width="65%"/>
 </p>
 
 <p align="center">
@@ -40,7 +40,7 @@ This project is an updated version of a simple maze generator based on the <b>DF
 </p>
 
 <p align="center">
-  <img src="Doc/Images/Point_collected.png" alt="Collected Points" width="65%"/>
+  <img src="Doc/Images/Points_collected.png" alt="Collected Points" width="65%"/>
 </p>
 
 <h2>Pathfinding Visuals</h2>
