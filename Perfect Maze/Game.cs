@@ -26,37 +26,8 @@ namespace Perfect_maze
             tBoard1.AllPointsCollected += () => label4.Visible = true;
             label4.Text = "Points collected! Go to the exit!";
             tBoard1.GameReset += () => label4.Visible = false;
-            Track.Play("Tracks/Project_73.mp3", volume: 0.5f);
+            Track.Play("Tracks/Project_73.mp3", volume: 0.3f);
         }
-
-        //private void timer1_Tick(object sender, EventArgs e)
-        //{
-        //    if (algorithmFlag)
-        //    {
-        //        if (!tBoard1.BfsAnimDone)
-        //            tBoard1.AnimAlgoritmStep++;
-        //        else
-        //        {
-        //            algorithmFlag = true;
-        //            timer1.Stop();
-        //        }
-        //    }
-        //    else if (reverseFlag)
-        //    {
-        //        if (tBoard1.PathCount > 0)
-        //            tBoard1.PathCount--;
-        //        else
-        //            timer1.Stop();
-        //    }
-        //    else
-        //    {
-        //        if (tBoard1.PathCount < tBoard1.Path.Count)
-        //            tBoard1.PathCount++;
-        //        else
-        //            timer1.Stop();
-        //    }
-        //    tBoard1.Invalidate();
-        //}
         private void timer1_Tick(object sender, EventArgs e)
         {
             if (algorithmFlag)
