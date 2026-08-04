@@ -116,14 +116,17 @@ namespace Perfect_maze
                     case 1:
                         TBoard.N = 10;
                         TBoard.EventCount = 5;
+                        TBoard.SpecialEventCount = 1;
                         break;
                     case 2:
                         TBoard.N = 20;
                         TBoard.EventCount = 10;
+                        TBoard.SpecialEventCount = 2;
                         break;
                     case 3:
                         TBoard.N = 30;
                         TBoard.EventCount = 15;
+                        TBoard.SpecialEventCount = 3;
                         break;
                 }
                 tBoard1.Build();
