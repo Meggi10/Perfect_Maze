@@ -14,14 +14,13 @@ This project is an updated version of a simple maze generator based on the <b>DF
   <li>Difficulty level selection (changing the difficulty starts a new game and resets the current score).</li>
   <li>Simple graphical user interface.</li>
   <li>In-game background music.</li>
-  <li>Random teleport event.</li>
+  <li>Random teleport event for each difficulty level.</li>
 </ul>
 
 <b><h2>Currently under development</h2></b>
 <ul>
   <li>Further improvements and expansion of the <b>Game Rules</b> section.</li>
   <li>Further improvements of UI and other features.</li>
-  <li>Improving random teleport event for 1, 2 or 3 special points that depends on level difficulty.</li>
   <li>Additional music tracks and sound effects.</li>
   <li>Extended Game Rules documentation.</li>
 </ul>
