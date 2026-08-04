@@ -25,3 +25,33 @@ This project is an updated version of a simple maze generator based on the <b>DF
   <li>Additional music tracks and sound effects.</li>
   <li>Extended Game Rules documentation.</li>
 </ul>
+
+<h2><b>UI & Mechanics</b></h2>
+
+<p align="center">
+  <img src="Doc/Images/Main_menu.png" alt="Main Menu" width="65%"/>
+</p>
+
+<p align="center">
+  <img src="Doc/Images/Level_easy.png" alt="Easy" width="45%"/>
+  <img src="Doc/Images/Level_medium.png" alt="Medium" width="45%"/>
+  <img src="Doc/Images/Level_Hard.png" alt="Hard" width="45%"/>
+  <img src="Doc/Images/Level_default.png" alt="Default" width="45%"/>
+</p>
+
+<p align="center">
+  <img src="Doc/Images/Points_collected.png" alt="Collected Points" width="65%"/>
+</p>
+
+<h2>Pathfinding Visuals</h2>
+
+<p align="center">
+  <img src="Doc/Images/A-Star_BFS.png" alt="A* vs BFS" width="45%"/>
+  <img src="Doc/Images/Reverse_path.png" alt="Reverse Path" width="45%"/>
+</p>
+
+<h2>Victory</h2>
+
+<p align="center">
+  <img src="Doc/Images/Maze_solved.png" alt="Maze Solved" width="65%"/>
+</p>
