@@ -138,12 +138,15 @@ Arrow Right – Move right
 
 Cells
 Player – Your current position in the maze (lime color).
-Exit – Your goal! Reach it to win (gold color).
-Locked Exit – The exit remains locked until all event cells are collected (gold color).
-Event Cell – Collect these to earn points (red color).
+Exit – Your goal! Reach it after collecting all event cells to win (gold color).
+Locked Exit – The exit remains locked until all event cells are collected.
+Event Cell – Collect these cells to earn points (red color).
+Teleport Event Cell – Some event cells may contain a teleport. Collecting a teleport event cell increases your score and instantly moves the player to a random location in the maze. The number of teleport cells depends on the selected difficulty level.
 
 Score
-Each event cell you collect increases your score. Collect all event cells to unlock the exit.
+Each event cell you collect increases your score.
+Teleport event cells also count as event cells, so collecting them increases your score as well.
+Collect all event cells to unlock the exit.
 Note: If you change the difficulty level during the game, a new maze is generated and your score is reset to 0.
 
 Algorithms (Visualization)
@@ -154,6 +157,7 @@ Reverse – Plays the path animation backwards.
 
 Tips
 Collect all event cells before heading to the exit.
+Be careful when collecting teleport event cells, as they will move you to another location in the maze.
 Use BFS or A* to find the escape path if you're stuck.
 Every maze is randomly generated, so no two runs are the same.
 
