@@ -20,7 +20,9 @@ namespace Perfect_maze
         public TCell StartCell;
         public TCell EndCell;
         public List<TCell> EventCell = new List<TCell>();
-        public static int EventCount = 10;
+        public static int EventCount = 15;
+        public static int SpecialEventCount = 3;
+        public List<TCell> SpecialCell = new List<TCell>();
         public static Random Rnd = new Random();
         public List<TCell> Path;
         public int PathCount;
@@ -32,6 +34,7 @@ namespace Perfect_maze
         public bool Reverse { get; set; } = false;
         public int AnimAlgoritmStep = 0;
         public bool BfsAnimDone => AnimAlgoritmStep >= algorithmPath.Count;
+        private bool IsTeleport;
         public TBoard()
         {
             InitializeComponent();
@@ -62,6 +65,13 @@ namespace Perfect_maze
                 var nEvents = Cells[Rnd.Next(N), Rnd.Next(N)];
                 if (nEvents != StartCell &&  nEvents != EndCell && !EventCell.Contains(nEvents))
                     EventCell.Add(nEvents);
+            }
+            SpecialCell.Clear();
+            while (SpecialCell.Count < SpecialEventCount)
+            {
+                var sEvent = EventCell[Rnd.Next(EventCell.Count)];
+                if (!SpecialCell.Contains(sEvent))
+                    SpecialCell.Add(sEvent);
             }
             Path = TAlgorithm.GenerationMazeDFS(Cells, N, StartCell, Rnd);
             PathCount = Path.Count;
@@ -98,15 +108,21 @@ namespace Perfect_maze
                 if (StartCell.Connected.Contains(neighbour))
                 {
                     StartCell = neighbour;
-                    if (EventCell.Remove(StartCell) && neighbour != EndCell)
+                    if (EventCell.Contains(StartCell) && neighbour != EndCell)
                     {
+                        IsTeleport = SpecialCell.Contains(StartCell);
+                        EventCell.Remove(StartCell);
+                        SpecialCell.Remove(StartCell);
                         score++;
                         ScoreChanged?.Invoke(score);
-                        do
+                        if (IsTeleport)
                         {
-                            StartCell = Cells[Rnd.Next(N), Rnd.Next(N)];
+                            do
+                            {
+                                StartCell = Cells[Rnd.Next(N), Rnd.Next(N)];
+                            }
+                            while (EventCell.Contains(StartCell) || StartCell == EndCell);
                         }
-                        while (EventCell.Contains(StartCell) && StartCell != EndCell);
                         if (EventCell.Count == 0)
                             AllPointsCollected?.Invoke();
                     }
@@ -154,6 +170,13 @@ namespace Perfect_maze
                 var nEvent = Cells[Rnd.Next(N), Rnd.Next(N)];
                 if (nEvent != StartCell && nEvent != EndCell && !EventCell.Contains(nEvent))
                     EventCell.Add(nEvent);
+            }
+            SpecialCell.Clear();
+            while (SpecialCell.Count < SpecialEventCount)
+            {
+                var sEvent = EventCell[Rnd.Next(EventCell.Count)];
+                if (!SpecialCell.Contains(sEvent))
+                    SpecialCell.Add(sEvent);
             }
             var cell = StartCell;
             List<TCell> depthCells = new List<TCell>();
