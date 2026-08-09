@@ -21,6 +21,8 @@ This project is an updated version of a simple maze generator based on the <b>DF
 <ul>
   <li>Further improvements and expansion of the <b>Game Rules</b> section.</li>
   <li>Further improvements of UI and other features.</li>
+  <li>Scoreboard section with best times for each difficulty level.</li>
+  <li>Enabled enter player name.</li>
   <li>Additional music tracks and sound effects.</li>
   <li>Extended Game Rules documentation.</li>
 </ul>
