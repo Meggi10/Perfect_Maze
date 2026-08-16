@@ -39,11 +39,14 @@
             this.label4 = new System.Windows.Forms.Label();
             this.button4 = new System.Windows.Forms.Button();
             this.button5 = new System.Windows.Forms.Button();
-            this.tBoard1 = new Perfect_maze.TBoard();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
+            this.timer2 = new System.Windows.Forms.Timer(this.components);
+            this.tBoard1 = new Perfect_maze.TBoard();
+            this.label9 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // timer1
@@ -104,7 +107,7 @@
             this.label1.Size = new System.Drawing.Size(103, 59);
             this.label1.TabIndex = 4;
             this.label1.Text = "0";
-            this.label1.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.label1.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
             // label2
             // 
@@ -167,16 +170,6 @@
             this.button5.UseVisualStyleBackColor = true;
             this.button5.Click += new System.EventHandler(this.button5_Click);
             // 
-            // tBoard1
-            // 
-            this.tBoard1.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
-            this.tBoard1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tBoard1.Location = new System.Drawing.Point(162, 0);
-            this.tBoard1.Name = "tBoard1";
-            this.tBoard1.Reverse = false;
-            this.tBoard1.Size = new System.Drawing.Size(1248, 788);
-            this.tBoard1.TabIndex = 0;
-            // 
             // comboBox1
             // 
             this.comboBox1.FormattingEnabled = true;
@@ -224,12 +217,51 @@
             this.label7.TabIndex = 13;
             this.label7.Text = "Algorithms";
             // 
-            // Form1
+            // label8
+            // 
+            this.label8.BackColor = System.Drawing.Color.DarkBlue;
+            this.label8.Font = new System.Drawing.Font("Modern No. 20", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.ForeColor = System.Drawing.Color.Transparent;
+            this.label8.Location = new System.Drawing.Point(34, 307);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(103, 25);
+            this.label8.TabIndex = 14;
+            this.label8.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // timer2
+            // 
+            this.timer2.Tick += new System.EventHandler(this.timer2_Tick);
+            // 
+            // tBoard1
+            // 
+            this.tBoard1.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            this.tBoard1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tBoard1.Location = new System.Drawing.Point(162, 0);
+            this.tBoard1.Name = "tBoard1";
+            this.tBoard1.Reverse = false;
+            this.tBoard1.Size = new System.Drawing.Size(1248, 788);
+            this.tBoard1.TabIndex = 0;
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.BackColor = System.Drawing.Color.DarkRed;
+            this.label9.Font = new System.Drawing.Font("Modern No. 20", 18F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label9.ForeColor = System.Drawing.Color.Transparent;
+            this.label9.Location = new System.Drawing.Point(49, 277);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(67, 25);
+            this.label9.TabIndex = 15;
+            this.label9.Text = "Time";
+            // 
+            // Game
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1572, 788);
             this.ControlBox = false;
+            this.Controls.Add(this.label9);
+            this.Controls.Add(this.label8);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.tBoard1);
             this.Controls.Add(this.label5);
@@ -244,7 +276,7 @@
             this.Controls.Add(this.button1);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label6);
-            this.Name = "Form1";
+            this.Name = "Game";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Maze";
             this.ResumeLayout(false);
@@ -269,6 +301,9 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Timer timer2;
+        private System.Windows.Forms.Label label9;
     }
 }
 
