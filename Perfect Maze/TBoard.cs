@@ -14,27 +14,31 @@ namespace Perfect_maze
 {
     public partial class TBoard : UserControl
     {
-        public static int N = 30;
-        public static float chamberSize = 0.5f;
+        public List<TCell> EventCell = new List<TCell>();
+        public List<TCell> SpecialCell = new List<TCell>();
+        private List<TCell> algorithmPath = new List<TCell>();
+        public List<TCell> Path;
+        public static Random Rnd = new Random();
         public TCell[,] Cells = new TCell[N, N];
         public TCell StartCell;
         public TCell EndCell;
-        public List<TCell> EventCell = new List<TCell>();
-        public static int EventCount = 15;
-        public static int SpecialEventCount = 3;
-        public List<TCell> SpecialCell = new List<TCell>();
-        public static Random Rnd = new Random();
-        public List<TCell> Path;
-        public int PathCount;
-        public int score = 0;
         public event Action<int> ScoreChanged;
         public event Action AllPointsCollected;
         public event Action GameReset;
-        private List<TCell> algorithmPath = new List<TCell>();
-        public bool Reverse { get; set; } = false;
+        public event Action PlayerMove;
+        public static int N = 30;
+        public static float chamberSize = 0.9f;
+        public static int EventCount = 15;
+        public static int SpecialEventCount = 3;
+        public int PathCount;
+        public int score = 0;
         public int AnimAlgoritmStep = 0;
-        public bool BfsAnimDone => AnimAlgoritmStep >= algorithmPath.Count;
+        public float time;
         private bool IsTeleport;
+        private bool FirstMove = true;
+        public bool Reverse { get; set; } = false;
+        public bool BfsAnimDone => AnimAlgoritmStep >= algorithmPath.Count;
+
         public TBoard()
         {
             InitializeComponent();
@@ -107,6 +111,11 @@ namespace Perfect_maze
                 var neighbour = Cells[x, y];
                 if (StartCell.Connected.Contains(neighbour))
                 {
+                    if (FirstMove)
+                    {
+                        FirstMove = false;
+                        PlayerMove?.Invoke();
+                    }
                     StartCell = neighbour;
                     if (EventCell.Contains(StartCell) && neighbour != EndCell)
                     {
@@ -129,7 +138,8 @@ namespace Perfect_maze
                 }
                 if (StartCell == EndCell && EventCell.Count == 0)
                 {
-                    MessageBox.Show("Congratulations!", "Maze solved!");
+                    MessageBox.Show("Congratulations!\nYour time: " +
+                        TimeSpan.FromSeconds(time).ToString(@"mm\:ss\.fff"), "Maze solved!");
                     score = 0;
                     ScoreChanged?.Invoke(score);
                     Reset();
@@ -213,6 +223,7 @@ namespace Perfect_maze
             } while (depthCells.Count > 0);
             Path.Add(StartCell);
             PathCount = Path.Count - 1;
+            FirstMove = true;
         }
         protected override void OnPaint(PaintEventArgs e)
         {
@@ -271,7 +282,7 @@ namespace Perfect_maze
             }
             if (algorithmPath.Count > 1)
             {
-                var bfsBrush = new SolidBrush(Color.FromArgb(180, Color.DeepSkyBlue));
+                var bfsBrush = new SolidBrush(Color.FromArgb(255, Color.DeepSkyBlue));
                 for (int i = 1; i < AnimAlgoritmStep; i++)
                 {
                     var actCell = algorithmPath[i];
