@@ -12,7 +12,7 @@ namespace Perfect_maze
         private AudioFileReader FileReader;
         private WaveOutEvent Waveout;
         private TLoopStream LoopStream;
-        private bool _disposed = false;
+        private bool disposed = false;
         public float Volume
         {
             get => Waveout?.Volume ?? 1f;
@@ -45,10 +45,10 @@ namespace Perfect_maze
         public void Resume() => Waveout?.Play();
         public void Dispose()
         {
-            if (!_disposed)
+            if (!disposed)
             {
                 Stop();
-                _disposed = true;
+                disposed = true;
             }
         }
     }

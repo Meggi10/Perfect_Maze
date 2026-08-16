@@ -9,13 +9,13 @@ namespace Perfect_maze
 {
     public class TTriangleOscilator : ISampleProvider
     {
+        private AdsrPhase adsrPhase = AdsrPhase.Attack;
         private double phase;
         private readonly double phaseStep;
-        private readonly int sampleRate = 44100;
-        private double envelope = 0.0;
         private readonly double sustainLevel;
         private readonly double attackStep, decayStep, releaseStep;
-        private AdsrPhase adsrPhase = AdsrPhase.Attack;
+        private readonly int sampleRate = 44100;
+        private double envelope = 0.0;
 
         private enum AdsrPhase { Attack, Decay, Sustain, Release, Done }
         public WaveFormat WaveFormat { get; } = WaveFormat.CreateIeeeFloatWaveFormat(44100, 1);

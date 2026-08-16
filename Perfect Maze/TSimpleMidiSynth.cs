@@ -10,13 +10,13 @@ namespace Perfect_maze
 {
     public class TSimpleMidiSynth : ISampleProvider
     {
-        private readonly double attackTime, decayTime, sustainLevel, releaseTime;
-        private readonly MidiFile midi;
-        private readonly List<MidiEvent> allEvents;
         private readonly List<TSquareOscillator> squactiveVoices = new List<TSquareOscillator>(32);
         private readonly List<TTriangleOscilator> triactiveVoices = new List<TTriangleOscilator>(32);
-        private readonly double samplesPerTick;
+        private readonly List<MidiEvent> allEvents;
         private readonly float[] tempBuffer = new float[1];
+        private readonly double attackTime, decayTime, sustainLevel, releaseTime;
+        private readonly MidiFile midi;
+        private readonly double samplesPerTick;
         private int eventIndex = 0;
         private long currentSample = 0;
 

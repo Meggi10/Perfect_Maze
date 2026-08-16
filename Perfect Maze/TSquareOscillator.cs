@@ -9,13 +9,13 @@ namespace Perfect_maze
 {
     public class TSquareOscillator : ISampleProvider
     {
-        private double phase;
+        private AdsrPhase adsrPhase = AdsrPhase.Attack;
+        private readonly double sustainLevel;
+        private readonly double attackStep, decayStep, releaseStep;
         private readonly double phaseStep;
         private readonly int sampleRate = 44100;
         private double envelope = 0.0;
-        private readonly double sustainLevel;
-        private readonly double attackStep, decayStep, releaseStep;
-        private AdsrPhase adsrPhase = AdsrPhase.Attack;
+        private double phase;
 
         private enum AdsrPhase { Attack, Decay, Sustain, Release, Done }
 

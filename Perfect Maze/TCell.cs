@@ -8,8 +8,8 @@ namespace Perfect_maze
 {
     public class TCell
     {
-        public int X, Y;
         public List<TCell> Connected = new List<TCell>();
         public TCell Parent { get; set; }
+        public int X, Y;
     }
 }
