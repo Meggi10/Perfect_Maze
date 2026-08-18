@@ -21,7 +21,7 @@ namespace Perfect_maze
         {
             Main_Menu form2 = new Main_Menu();
             form2.Show();
-            this.Hide();
+            Close();
         }
 
         private void textBox1_TextChanged(object sender, EventArgs e)

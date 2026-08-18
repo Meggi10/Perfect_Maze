@@ -26,14 +26,14 @@ namespace Perfect_maze
         {
             PlayerNameForm playerForm = new PlayerNameForm();
             playerForm.Show();
-            this.Hide();
+            Hide();
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
             Game_Rules game_rules = new Game_Rules();
             game_rules.Show();
-            this.Hide();
+            Hide();
         }
 
         private void label1_Click(object sender, EventArgs e)
@@ -56,14 +56,14 @@ namespace Perfect_maze
         {
             Credits credits = new Credits();
             credits.Show();
-            this.Hide();
+            Hide();
         }
 
         private void button5_Click(object sender, EventArgs e)
         {
             Scoreboard scoreboard = new Scoreboard();
             scoreboard.Show();
-            this.Hide();
+            Hide();
         }
     }
 }
