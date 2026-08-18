@@ -38,6 +38,7 @@ namespace Perfect_maze
             };
             Track.Play("Tracks/Project_73.mp3", volume: 0.1f);
             tBoard1.PlayerMove += StartGameTimer;
+            label11.Text += TSession.PlayerName;
         }
         private void StartGameTimer()
         {
@@ -110,9 +111,10 @@ namespace Perfect_maze
             if (result == DialogResult.Yes)
             {
                 Track.Stop();
+                TSession.Clear();
                 Main_Menu form2 = new Main_Menu();
                 form2.Show();
-                Hide();
+                Close();
             }
         }
 
