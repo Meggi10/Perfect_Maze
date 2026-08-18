@@ -26,6 +26,7 @@ This project is an updated version of a simple maze generator based on the <b>DF
   <li>Further improvements of UI.</li>
   <li>Improvements for Scoreboard section with best times for each difficulty level.</li>
   <li>Improvements for saving player name in current session and binding it with the achieved player time in game.</li>
+  <li>Protection from enter the forbidden words.</li>
   <li>Additional music tracks and sound effects.</li>
   <li>Program documentation.</li>
 </ul>
