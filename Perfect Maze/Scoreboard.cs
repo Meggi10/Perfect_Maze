@@ -31,7 +31,7 @@ namespace Perfect_maze
         {
             Main_Menu form2 = new Main_Menu();
             form2.Show();
-            this.Hide();
+            Close();
         }
 
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
