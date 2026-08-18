@@ -20,7 +20,7 @@ This project is an updated version of a simple maze generator based on the <b>DF
   <li>Working timer for each gameplay.</li>
   <li>Protection from enter the forbidden words.</li>
   <li>Random player name generator.</li>
-  <li>Add saving player name in active session</li>
+  <li>Add saving player name in active session.</li>
 </ul>
 
 <b><h2>Currently under development</h2></b>
