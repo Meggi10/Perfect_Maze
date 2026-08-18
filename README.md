@@ -18,6 +18,9 @@ This project is an updated version of a simple maze generator based on the <b>DF
   <li>Random teleport event for each difficulty level.</li>
   <li>Scoreboard section without saved times for now.</li>
   <li>Working timer for each gameplay.</li>
+  <li>Protection from enter the forbidden words.</li>
+  <li>Random player name generator.</li>
+  <li>Add saving player name in active session</li>
 </ul>
 
 <b><h2>Currently under development</h2></b>
@@ -25,9 +28,7 @@ This project is an updated version of a simple maze generator based on the <b>DF
   <li>Further improvements and expansion of the <b>Game Rules</b> section.</li>
   <li>Further improvements of UI.</li>
   <li>Improvements for Scoreboard section with best times for each difficulty level.</li>
-  <li>Improvements for saving player name in current session and binding it with the achieved player time in game.</li>
-  <li>Protection from enter the forbidden words.</li>
-  <li>Random player name generator.</li>
+  <li>Improvements for binding player name with level difficulty and achieved time during active session.</li>
   <li>Additional music tracks and sound effects.</li>
   <li>Program documentation.</li>
 </ul>
