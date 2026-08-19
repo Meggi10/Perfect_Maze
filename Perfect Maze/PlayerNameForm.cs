@@ -12,7 +12,6 @@ namespace Perfect_maze
 {
     public partial class PlayerNameForm : Form
     {
-        public List<string> Names = new List<string>();
         public PlayerNameForm()
         {
             InitializeComponent();
@@ -36,10 +35,12 @@ namespace Perfect_maze
             var nick = textBox1.Text;
             if (string.IsNullOrWhiteSpace(nick))
                 label3.Text = "Please enter your name!";
-            else if (Names.Contains(nick))
-                label3.Text = "That name already exists. Please enter another name.";
             else if (TWordFilter.IsForbidden(nick))
                 label3.Text = "This name is not allowed! Please choose another name.";
+            else if (nick.Length < 3)
+                label3.Text = "Name must be at least 3 characters long.";
+            else if (nick.Length >= 16)
+                label3.Text = "Name must be no more than 15 characters long.";
             else
                 label3.Text = "";
         }
@@ -52,9 +53,14 @@ namespace Perfect_maze
                 label3.Text = "Please enter your name!";
                 return;
             }
-            if (Names.Contains(nick))
+            if (nick.Length < 3)
             {
-                label3.Text = "That name already exists. Please enter another name.";
+                label3.Text = "Your name is too short. Name must contain minimum 3 characters.";
+                return;
+            }
+            if (nick.Length >= 16)
+            {
+                label3.Text = "Your name is too long. Name can contain maximum 15 characters.";
                 return;
             }
             if (TWordFilter.IsForbidden(nick))
@@ -62,7 +68,6 @@ namespace Perfect_maze
                 label3.Text = "This name is not allowed! Please choose another name.";
                 return;
             }
-            Names.Add(nick);
             TSession.PlayerName = nick;
             Game form1 = new Game();
             form1.Show();
