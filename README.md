@@ -6,7 +6,7 @@ This project is an updated version of a simple maze generator based on the <b>DF
 <b><h2>Features</h2></b>
 <ul>
   <li>Maze generation using <b>DFS</b> (from start to end and from end to start).</li>
-  <li>Player name input without saving it in current session.</li>
+  <li>Player name input with saving it in active session.</li>
   <li>Player and exit cells.</li>
   <li>Event cells that increase the player's score.</li>
   <li>Locked exit that unlocks only after all event cells have been collected.</li>
@@ -20,7 +20,6 @@ This project is an updated version of a simple maze generator based on the <b>DF
   <li>Working timer for each gameplay.</li>
   <li>Protection from enter the forbidden words.</li>
   <li>Random player name generator.</li>
-  <li>Add saving player name in active session.</li>
 </ul>
 
 <b><h2>Currently under development</h2></b>
