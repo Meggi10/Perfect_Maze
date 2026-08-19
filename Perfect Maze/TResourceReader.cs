@@ -11,7 +11,7 @@ namespace Perfect_maze
 {
     public static class TResourceReader
     {
-        public static string ReadManifestText(string dotPath)
+        internal static string ReadManifestText(string dotPath)
         {
             var assembly = Assembly.GetExecutingAssembly();
             string rootNamespace = assembly.GetName().Name;
