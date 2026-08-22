@@ -43,7 +43,12 @@ This project is an updated version of a simple maze generator based on the <b>DF
 </p>
 
 <p align="center">
-  <img src="Doc/Images/Enter_Player_Name.png" alt="Enter Player Name" width="65%"/>
+  <img src="Doc/Images/Enter_Player_Name.png" alt="Enter Player Name" width="45%"/>
+  <img src="Doc/Images/Blank_Name.png" alt="Blank Name" width="45%"/>
+  <img src="Doc/Images/Enter_Player_Name_Forbidden.png" alt="Forbidden Name" width="45%"/>
+  <img src="Doc/Images/Short_Name.png" alt="Short Name" width="45%"/>
+  <img src="Doc/Images/Long_Name.png" alt="Long Name" width="45%"/>
+  <img src="Doc/Images/Mode_Selection.png" alt="Mode" width="45%"/>
 </p>
 
 <p align="center">
