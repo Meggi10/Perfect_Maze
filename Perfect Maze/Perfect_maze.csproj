@@ -137,6 +137,12 @@
     <Compile Include="Game_Rules.Designer.cs">
       <DependentUpon>Game_Rules.cs</DependentUpon>
     </Compile>
+    <Compile Include="Mode.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Mode.Designer.cs">
+      <DependentUpon>Mode.cs</DependentUpon>
+    </Compile>
     <Compile Include="PlayerNameForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -160,8 +166,11 @@
     </Compile>
     <Compile Include="TCell.cs" />
     <Compile Include="TGameSoundtrack.cs" />
+    <Compile Include="THelpers.cs" />
     <Compile Include="TLoopStream.cs" />
     <Compile Include="TNickName.cs" />
+    <Compile Include="TPlayerLog.cs" />
+    <Compile Include="TPlayerSession.cs" />
     <Compile Include="TResourceReader.cs" />
     <Compile Include="TSession.cs" />
     <Compile Include="TSimpleMidiSynth.cs" />
@@ -180,6 +189,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Game_Rules.resx">
       <DependentUpon>Game_Rules.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Mode.resx">
+      <DependentUpon>Mode.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="PlayerNameForm.resx">
       <DependentUpon>PlayerNameForm.cs</DependentUpon>
