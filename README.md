@@ -18,7 +18,7 @@ This project is an updated version of a simple maze generator based on the <b>DF
   <li>Random teleport event for each difficulty level.</li>
   <li>Scoreboard section without saved times for now.</li>
   <li>Working timer for each gameplay.</li>
-  <li>Protection from enter the forbidden words.</li>
+  <li>Protection against the forbidden words.</li>
   <li>Random player name generator.</li>
   <li>Player sessions to enable saving — saving is not implemented yet.</li>
   <li>Option to select one of two available modes: Speedrun or Fog of War — the modes do not have any logic implemented yet.</li>
@@ -27,7 +27,7 @@ This project is an updated version of a simple maze generator based on the <b>DF
 <b><h2>Currently under development</h2></b>
 <ul>
   <li>Further improvements and expansion of the <b>Game Rules</b> section.</li>
-  <li>Further improvements of UI.</li>
+  <li>Further UI improvements.</li>
   <li>Implementing the Fog of War mode logic.</li>
   <li>Improving the Speedrun mode.</li>
   <li>Improvements for Scoreboard section with best times for each difficulty level.</li>
@@ -68,4 +68,10 @@ This project is an updated version of a simple maze generator based on the <b>DF
 
 <p align="center">
   <img src="Doc/Images/Maze_solved.png" alt="Maze Solved" width="65%"/>
+</p>
+
+<h2><b>AI Assistance</b></h2>
+<p>
+  Some parts of the code were developed with the assistance of <b>Claude Sonnet 5</b>.
+  AI-generated suggestions were reviewed, adapted, and integrated into the project by the author.
 </p>
