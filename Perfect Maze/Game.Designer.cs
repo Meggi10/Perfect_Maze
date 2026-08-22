@@ -49,6 +49,8 @@
             this.tBoard1 = new Perfect_maze.TBoard();
             this.label10 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
+            this.label12 = new System.Windows.Forms.Label();
+            this.label13 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // timer1
@@ -131,6 +133,7 @@
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(162, 788);
             this.label3.TabIndex = 6;
+            this.label3.Click += new System.EventHandler(this.label3_Click);
             // 
             // label4
             // 
@@ -268,6 +271,7 @@
             this.label10.Size = new System.Drawing.Size(83, 25);
             this.label10.TabIndex = 16;
             this.label10.Text = "Player";
+            this.label10.Click += new System.EventHandler(this.label10_Click);
             // 
             // label11
             // 
@@ -279,6 +283,30 @@
             this.label11.Size = new System.Drawing.Size(148, 23);
             this.label11.TabIndex = 17;
             this.label11.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.label11.Click += new System.EventHandler(this.label11_Click);
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.BackColor = System.Drawing.Color.DarkRed;
+            this.label12.Font = new System.Drawing.Font("Modern No. 20", 18F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label12.ForeColor = System.Drawing.Color.Transparent;
+            this.label12.Location = new System.Drawing.Point(48, 453);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(70, 25);
+            this.label12.TabIndex = 18;
+            this.label12.Text = "Mode";
+            // 
+            // label13
+            // 
+            this.label13.BackColor = System.Drawing.Color.DarkRed;
+            this.label13.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.label13.ForeColor = System.Drawing.Color.Transparent;
+            this.label13.Location = new System.Drawing.Point(8, 478);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(148, 23);
+            this.label13.TabIndex = 19;
+            this.label13.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // Game
             // 
@@ -286,6 +314,8 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1572, 788);
             this.ControlBox = false;
+            this.Controls.Add(this.label13);
+            this.Controls.Add(this.label12);
             this.Controls.Add(this.label11);
             this.Controls.Add(this.label10);
             this.Controls.Add(this.label9);
@@ -334,6 +364,8 @@
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.Label label13;
     }
 }
 

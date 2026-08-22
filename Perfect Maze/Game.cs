@@ -39,6 +39,7 @@ namespace Perfect_maze
             Track.Play("Tracks/Project_73.mp3", volume: 0.1f);
             tBoard1.PlayerMove += StartGameTimer;
             label11.Text += TSession.PlayerName;
+            label13.Text += THelpers.GetDisplayName(TSession.Mode);
         }
         private void StartGameTimer()
         {
@@ -168,6 +169,21 @@ namespace Perfect_maze
                 }
                 tBoard1.Invalidate();
             }
+        }
+
+        private void label10_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label3_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label11_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
