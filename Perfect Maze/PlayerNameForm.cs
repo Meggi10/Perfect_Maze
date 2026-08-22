@@ -32,40 +32,30 @@ namespace Perfect_maze
 
         private void textBox1_TextChanged(object sender, EventArgs e)
         {
-            var nick = textBox1.Text;
+            string error = ValidateNick(textBox1.Text);
+            label3.Text = error ?? "";
+        }
+
+        private string ValidateNick(string nick)
+        {
             if (string.IsNullOrWhiteSpace(nick))
-                label3.Text = "Please enter your name!";
-            else if (TWordFilter.IsForbidden(nick))
-                label3.Text = "This name is not allowed! Please choose another name.";
-            else if (nick.Length < 3)
-                label3.Text = "Name must be at least 3 characters long.";
-            else if (nick.Length >= 16)
-                label3.Text = "Name must be no more than 15 characters long.";
-            else
-                label3.Text = "";
+                return "Please enter your name!";
+            if (TWordFilter.IsForbidden(nick))
+                return "This name is not allowed! Please choose another name.";
+            if (nick.Length < 3)
+                return "Name must be at least 3 characters long.";
+            if (nick.Length >= 16)
+                return "Name must be no more than 15 characters long.";
+            return null;
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
-            var nick = textBox1.Text;
-            if (string.IsNullOrWhiteSpace(nick))
+            string nick = textBox1.Text;
+            string error = ValidateNick(nick);
+            if (error != null)
             {
-                label3.Text = "Please enter your name!";
-                return;
-            }
-            if (nick.Length < 3)
-            {
-                label3.Text = "Your name is too short. Name must contain minimum 3 characters.";
-                return;
-            }
-            if (nick.Length >= 16)
-            {
-                label3.Text = "Your name is too long. Name can contain maximum 15 characters.";
-                return;
-            }
-            if (TWordFilter.IsForbidden(nick))
-            {
-                label3.Text = "This name is not allowed! Please choose another name.";
+                label3.Text = error;
                 return;
             }
             TSession.PlayerName = nick;
