@@ -59,8 +59,8 @@ namespace Perfect_maze
                 return;
             }
             TSession.PlayerName = nick;
-            Game form1 = new Game();
-            form1.Show();
+            Mode mode = new Mode();
+            mode.Show();
             Close();
         }
 
