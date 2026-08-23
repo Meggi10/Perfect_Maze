@@ -119,6 +119,12 @@
     <Compile Include="Credits.Designer.cs">
       <DependentUpon>Credits.cs</DependentUpon>
     </Compile>
+    <Compile Include="DiffLvls.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DiffLvls.Designer.cs">
+      <DependentUpon>DiffLvls.cs</DependentUpon>
+    </Compile>
     <Compile Include="Game.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -180,6 +186,9 @@
     <Compile Include="TWordFilter.cs" />
     <EmbeddedResource Include="Credits.resx">
       <DependentUpon>Credits.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DiffLvls.resx">
+      <DependentUpon>DiffLvls.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Game.resx">
       <DependentUpon>Game.cs</DependentUpon>
