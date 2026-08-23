@@ -27,6 +27,7 @@ namespace Perfect_maze
             TBoard.N = 10;
             TBoard.EventCount = 5;
             TBoard.SpecialEventCount = 1;
+            TSession.DifficultyLvl = TSession.DiffLvls.Easy;
         }
 
         private void radioButton2_CheckedChanged(object sender, EventArgs e)
@@ -34,6 +35,7 @@ namespace Perfect_maze
             TBoard.N = 20;
             TBoard.EventCount = 10;
             TBoard.SpecialEventCount = 2;
+            TSession.DifficultyLvl = TSession.DiffLvls.Normal;
         }
 
         private void radioButton3_CheckedChanged(object sender, EventArgs e)
@@ -41,6 +43,7 @@ namespace Perfect_maze
             TBoard.N = 30;
             TBoard.EventCount = 15;
             TBoard.SpecialEventCount = 3;
+            TSession.DifficultyLvl = TSession.DiffLvls.Hard;
         }
 
         private void button3_Click(object sender, EventArgs e)
