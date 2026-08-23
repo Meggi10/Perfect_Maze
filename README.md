@@ -38,12 +38,12 @@ This project is an updated version of a simple maze generator based on the <b>DF
 
 <h2><b>UI & Mechanics</b></h2>
 
-<h3><b>Main Menu</b></h3>
+<h2><b>Main Menu</b></h2>
 <p align="center">
   <img src="Doc/Images/Main_menu.png" alt="Main Menu" width="65%"/>
 </p>
 
-<h3><b>Enter Name, Mode & Difficulty Level Selection</b></h3>
+<h2><b>Enter Name, Mode & Difficulty Level Selection</b></h2>
 <p align="center">
   <img src="Doc/Images/Enter_Player_Name.png" alt="Enter Player Name" width="45%"/>
   <img src="Doc/Images/Blank_Name.png" alt="Blank Name" width="45%"/>
@@ -54,14 +54,14 @@ This project is an updated version of a simple maze generator based on the <b>DF
   <img src="Doc/Images/Diff_lvls.png" alt="Mode" width="45%"/>
 </p>
 
-<h3><b></b>Difficulty Levels</h3>
+<h2><b></b>Difficulty Levels</h2>
 <p align="center">
   <img src="Doc/Images/Level_easy.png" alt="Easy" width="45%"/>
   <img src="Doc/Images/Level_medium.png" alt="Medium" width="45%"/>
   <img src="Doc/Images/Level_Hard.png" alt="Hard" width="45%"/>
 </p>
 
-<h3><b>Collecting Points</b></h3>
+<h2><b>Collecting Points</b></h2>
 <p align="center">
   <img src="Doc/Images/Points_collected.png" alt="Collected Points" width="65%"/>
 </p>
