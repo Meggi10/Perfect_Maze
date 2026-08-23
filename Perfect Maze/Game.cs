@@ -22,7 +22,6 @@ namespace Perfect_maze
         private bool algorithmFlag = false;
         private bool IsGameRunning = true;
         public int score = 0;
-        int selectedIdx;
         public Game()
         {
             InitializeComponent();
@@ -38,8 +37,9 @@ namespace Perfect_maze
             };
             Track.Play("Tracks/Project_73.mp3", volume: 0.1f);
             tBoard1.PlayerMove += StartGameTimer;
-            label11.Text += TSession.PlayerName;
+            label10.Text += TSession.PlayerName;
             label13.Text += THelpers.GetDisplayName(TSession.Mode);
+            label14.Text += THelpers.GetLvlName(TSession.DifficultyLvl);
         }
         private void StartGameTimer()
         {
@@ -119,41 +119,6 @@ namespace Perfect_maze
             }
         }
 
-        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            selectedIdx = comboBox1.SelectedIndex;
-            if (selectedIdx == 0)
-                selectedIdx = TBoard.Rnd.Next(1, 4);
-            DialogResult result = MessageBox.Show(
-                "Are you sure, you want change the difficulty level? All points will be lost!",
-                "Change",
-                MessageBoxButtons.YesNo,
-                MessageBoxIcon.Warning);
-            if (result == DialogResult.Yes)
-            {
-                switch (selectedIdx)
-                {
-                    case 1:
-                        TBoard.N = 10;
-                        TBoard.EventCount = 5;
-                        TBoard.SpecialEventCount = 1;
-                        break;
-                    case 2:
-                        TBoard.N = 20;
-                        TBoard.EventCount = 10;
-                        TBoard.SpecialEventCount = 2;
-                        break;
-                    case 3:
-                        TBoard.N = 30;
-                        TBoard.EventCount = 15;
-                        TBoard.SpecialEventCount = 3;
-                        break;
-                }
-                tBoard1.Build();
-                tBoard1.Invalidate();
-            }
-        }
-
         private void timer2_Tick(object sender, EventArgs e)
         {
             if (IsGameRunning)
@@ -171,17 +136,7 @@ namespace Perfect_maze
             }
         }
 
-        private void label10_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void label3_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label11_Click(object sender, EventArgs e)
         {
 
         }
