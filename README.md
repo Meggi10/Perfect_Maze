@@ -36,7 +36,9 @@ This project is an updated version of a simple maze generator based on the <b>DF
   <li>Program documentation.</li>
 </ul>
 
-<h2><b>UI & Mechanics</b></h2>
+<p align="center">
+  <h1><b>UI & Mechanics</b></h1>
+</p>
 
 <h2><b>Main Menu</b></h2>
 <p align="center">
