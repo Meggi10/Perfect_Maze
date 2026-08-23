@@ -7,12 +7,12 @@ This project is an updated version of a simple maze generator based on the <b>DF
 <ul>
   <li>Maze generation using <b>DFS</b> (from start to end and from end to start).</li>
   <li>Player name input with saving it in active session.</li>
-  <li>Player and exit cells.</li>
+  <li>Player and finish cells.</li>
   <li>Event cells that increase the player's score.</li>
   <li>Locked exit that unlocks only after all event cells have been collected.</li>
   <li>Escape path visualization using <b>BFS (Breadth-First Search)</b> and <b>A*</b> algorithms.</li>
   <li>Path animation reversal.</li>
-  <li>Difficulty level selection (changing the difficulty starts a new game and resets the current score).</li>
+  <li>Difficulty level selection before jump into the game.</li>
   <li>Simple graphical user interface.</li>
   <li>In-game background music.</li>
   <li>Random teleport event for each difficulty level.</li>
@@ -28,9 +28,8 @@ This project is an updated version of a simple maze generator based on the <b>DF
 <ul>
   <li>Further improvements and expansion of the <b>Game Rules</b> section.</li>
   <li>Further UI improvements.</li>
-  <li>Changes in level difficulty selection.</li>
-  <li>Implementing the Fog of War mode logic.</li>
-  <li>Improving the Speedrun mode.</li>
+  <li>Implementing Fog of War mode logic.</li>
+  <li>Improving Speedrun mode.</li>
   <li>Improvements for Scoreboard section with best times for each difficulty level.</li>
   <li>Improvements for binding player name with level difficulty, mode and achieved time during active session.</li>
   <li>Additional music tracks and sound effects.</li>
@@ -50,13 +49,13 @@ This project is an updated version of a simple maze generator based on the <b>DF
   <img src="Doc/Images/Short_Name.png" alt="Short Name" width="45%"/>
   <img src="Doc/Images/Long_Name.png" alt="Long Name" width="45%"/>
   <img src="Doc/Images/Mode_Selection.png" alt="Mode" width="45%"/>
+  <img src="Doc/Images/Diff_lvls.png" alt="Mode" width="45%"/>
 </p>
 
 <p align="center">
   <img src="Doc/Images/Level_easy.png" alt="Easy" width="45%"/>
   <img src="Doc/Images/Level_medium.png" alt="Medium" width="45%"/>
   <img src="Doc/Images/Level_Hard.png" alt="Hard" width="45%"/>
-  <img src="Doc/Images/Level_default.png" alt="Default" width="45%"/>
 </p>
 
 <p align="center">
