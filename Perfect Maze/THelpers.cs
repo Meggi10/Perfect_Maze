@@ -20,5 +20,19 @@ namespace Perfect_maze
                     return mode.ToString();
             }
         }
+        public static string GetLvlName(TSession.DiffLvls diffLvls)
+        {
+            switch (diffLvls)
+            {
+                case TSession.DiffLvls.Easy:
+                    return "Easy";
+                case TSession.DiffLvls.Normal:
+                    return "Medium";
+                case TSession.DiffLvls.Hard:
+                    return "Hard";
+                default:
+                    return diffLvls.ToString();
+            }
+        }
     }
 }
