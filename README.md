@@ -28,6 +28,7 @@ This project is an updated version of a simple maze generator based on the <b>DF
 <ul>
   <li>Further improvements and expansion of the <b>Game Rules</b> section.</li>
   <li>Further UI improvements.</li>
+  <li>Changes in level difficulty selection.</li>
   <li>Implementing the Fog of War mode logic.</li>
   <li>Improving the Speedrun mode.</li>
   <li>Improvements for Scoreboard section with best times for each difficulty level.</li>
