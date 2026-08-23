@@ -9,7 +9,7 @@ namespace Perfect_maze
     public class TPlayerSession
     {
         public string Name { get; set; }
-        public int Level { get; set; }
+        public DiffLvls Level { get; set; }
         public Mode Mode { get; set; }
         public TimeSpan Time { get; set; }
         public DateTime PlayedAt { get; set; }

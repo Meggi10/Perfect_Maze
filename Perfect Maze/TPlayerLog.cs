@@ -25,7 +25,7 @@ namespace Perfect_maze
             Session = JsonSerializer.Deserialize<List<TPlayerSession>>(json) ?? new List<TPlayerSession>();
         }
 
-        public static void AddSession(string name, int level, Mode mode, TimeSpan time)
+        public static void AddSession(string name, DiffLvls level, Mode mode, TimeSpan time)
         {
             Session.Add(new TPlayerSession
             {
