@@ -30,6 +30,12 @@ namespace Perfect_maze
         public static float chamberSize = 0.9f;
         public static int EventCount = 15;
         public static int SpecialEventCount = 3;
+        private static readonly Brush ReverseBrush = new SolidBrush(Color.Gray);
+        private static readonly Brush StartBrush = new SolidBrush(Color.LimeGreen);
+        private static readonly Brush EndBrush = new SolidBrush(Color.Gold);
+        private static readonly Brush EventBrush = new SolidBrush(Color.Red);
+        private static readonly Brush AlgoBrush = new SolidBrush(Color.FromArgb(255, Color.DeepSkyBlue));
+        private Brush ForeBrush = new SolidBrush(Color.Black);
         public int PathCount;
         public int score = 0;
         public int AnimAlgoritmStep = 0;
@@ -45,6 +51,7 @@ namespace Perfect_maze
             DoubleBuffered = true;
             Build();
         }
+
         public void Build()
         {
             algorithmPath = new List<TCell>();
@@ -57,31 +64,13 @@ namespace Perfect_maze
                     cell.Y = y;
                     Cells[x, y] = cell;
                 }
-            StartCell = Cells[Rnd.Next(N), Rnd.Next(N)];
-            do
-            {
-                EndCell = Cells[Rnd.Next(N), Rnd.Next(N)];
-            }
-            while (EndCell == StartCell);
-            EventCell.Clear();
-            while (EventCell.Count < EventCount)
-            {
-                var nEvents = Cells[Rnd.Next(N), Rnd.Next(N)];
-                if (nEvents != StartCell &&  nEvents != EndCell && !EventCell.Contains(nEvents))
-                    EventCell.Add(nEvents);
-            }
-            SpecialCell.Clear();
-            while (SpecialCell.Count < SpecialEventCount)
-            {
-                var sEvent = EventCell[Rnd.Next(EventCell.Count)];
-                if (!SpecialCell.Contains(sEvent))
-                    SpecialCell.Add(sEvent);
-            }
+            HandleCellLanding();
             Path = TAlgorithm.GenerationMazeDFS(Cells, N, StartCell, Rnd);
             PathCount = Path.Count;
             score = 0;
             ScoreChanged?.Invoke(score);
         }
+
         protected override void OnPreviewKeyDown(PreviewKeyDownEventArgs e)
         {
             switch (e.KeyCode)
@@ -94,6 +83,7 @@ namespace Perfect_maze
                     break;
             }
         }
+
         protected override void OnKeyDown(KeyEventArgs e)
         {
             base.OnKeyDown(e);
@@ -148,12 +138,14 @@ namespace Perfect_maze
                 Invalidate();
             }
         }
+
         public void EscapePathBFS()
         {
             algorithmPath = TAlgorithm.BFS(StartCell, EndCell) ?? new List<TCell>();
             AnimAlgoritmStep = 0;
             Invalidate();
         }
+
         public void EscapePathAStar()
         {
             algorithmPath = TAlgorithm.AStar(StartCell, EndCell) ?? new List<TCell>();
@@ -161,13 +153,8 @@ namespace Perfect_maze
             Invalidate();
         }
 
-        public void Reset()
+        private void HandleCellLanding()
         {
-            algorithmPath = new List<TCell>();
-            AnimAlgoritmStep = 0;
-            for (int y = 0; y < N; y++)
-                for (int x = 0; x < N; x++)
-                    Cells[x, y] = new TCell() { X = x, Y = y };
             StartCell = Cells[Rnd.Next(N), Rnd.Next(N)];
             do
             {
@@ -188,43 +175,49 @@ namespace Perfect_maze
                 if (!SpecialCell.Contains(sEvent))
                     SpecialCell.Add(sEvent);
             }
-            var cell = StartCell;
-            List<TCell> depthCells = new List<TCell>();
-            Path = new List<TCell>();
-            do
-            {
-                Path.Add(cell);
-                List<TCell> freeCells = new List<TCell>();
-                var offset = new int[] { -1, 0, 0, 1, 1, 0, 0, -1 };
-                for (int i = 0; i < 8; i += 2)
-                {
-                    var y = cell.Y + offset[i];
-                    var x = cell.X + offset[i + 1];
-                    if (y >= 0 && x >= 0 && y < N && x < N)
-                    {
-                        var neighbor = Cells[x, y];
-                        if (neighbor.Connected.Count == 0)
-                            freeCells.Add(neighbor);
-                    }
-                }
-                if (freeCells.Count > 0)
-                {
-                    var neighbor = freeCells[Rnd.Next(freeCells.Count)];
-                    cell.Connected.Add(neighbor);
-                    neighbor.Connected.Add(cell);
-                    depthCells.Add(cell);
-                    cell = neighbor;
-                }
-                else
-                {
-                    cell = depthCells[depthCells.Count - 1];
-                    depthCells.RemoveAt(depthCells.Count - 1);
-                }
-            } while (depthCells.Count > 0);
-            Path.Add(StartCell);
+        }
+
+        public void Reset()
+        {
+            algorithmPath = new List<TCell>();
+            AnimAlgoritmStep = 0;
+            for (int y = 0; y < N; y++)
+                for (int x = 0; x < N; x++)
+                    Cells[x, y] = new TCell() { X = x, Y = y };
+            HandleCellLanding();
+            Path = TAlgorithm.GenerationMazeDFS(Cells, N, StartCell, Rnd);
             PathCount = Path.Count - 1;
             FirstMove = true;
         }
+
+        protected override void OnForeColorChanged(EventArgs e)
+        {
+            base.OnForeColorChanged(e);
+            ForeBrush?.Dispose();
+            ForeBrush = new SolidBrush(ForeColor);
+            Invalidate();
+        }
+
+        private static RectangleF SegmentRect(TCell prevCell, TCell actCell, float chamberSize)
+        {
+            var rc = new RectangleF();
+            if (actCell.Y == prevCell.Y)
+            {
+                rc.X = Math.Min(prevCell.X, actCell.X);
+                rc.Y = actCell.Y;
+                rc.Width = 1 + chamberSize;
+                rc.Height = chamberSize;
+            }
+            else
+            {
+                rc.Y = Math.Min(prevCell.Y, actCell.Y);
+                rc.X = actCell.X;
+                rc.Height = 1 + chamberSize;
+                rc.Width = chamberSize;
+            }
+            return rc;
+        }
+
         protected override void OnPaint(PaintEventArgs e)
         {
             base.OnPaint(e);
@@ -235,88 +228,20 @@ namespace Perfect_maze
             e.Graphics.TranslateTransform(offset, offset);
             if (Reverse)
             {
-                var reverseBrush = new SolidBrush(Color.Gray);
                 for (int i = 1; i < Path.Count; i++)
-                {
-                    var actCell = Path[i];
-                    var prevCell = Path[i - 1];
-                    var rc = new RectangleF();
-                    if (actCell.Y == prevCell.Y)
-                    {
-                        rc.X = Math.Min(prevCell.X, actCell.X);
-                        rc.Y = actCell.Y;
-                        rc.Width = 1 + chamberSize;
-                        rc.Height = chamberSize;
-                    }
-                    else
-                    {
-                        rc.Y = Math.Min(prevCell.Y, actCell.Y);
-                        rc.X = actCell.X;
-                        rc.Height = 1 + chamberSize;
-                        rc.Width = chamberSize;
-                    }
-                    e.Graphics.FillRectangle(reverseBrush, rc);
-                }
+                    e.Graphics.FillRectangle(ReverseBrush, SegmentRect(Path[i - 1], Path[i], chamberSize));
             }
-            var brush = new SolidBrush(ForeColor);
             for (int i = 1; i < PathCount; i++)
-            {
-                var actCell = Path[i];
-                var prevCell = Path[i - 1];
-                var rc = new RectangleF();
-                if (actCell.Y == prevCell.Y)
-                {
-                    rc.X = Math.Min(prevCell.X, actCell.X);
-                    rc.Y = actCell.Y;
-                    rc.Width = 1 + chamberSize;
-                    rc.Height = chamberSize;
-                }
-                else
-                {
-                    rc.Y = Math.Min(prevCell.Y, actCell.Y);
-                    rc.X = actCell.X;
-                    rc.Height = 1 + chamberSize;
-                    rc.Width = chamberSize;
-                }
-                e.Graphics.FillRectangle(brush, rc);
-            }
+                e.Graphics.FillRectangle(ForeBrush, SegmentRect(Path[i - 1], Path[i], chamberSize));
             if (algorithmPath.Count > 1)
             {
-                var bfsBrush = new SolidBrush(Color.FromArgb(255, Color.DeepSkyBlue));
                 for (int i = 1; i < AnimAlgoritmStep; i++)
-                {
-                    var actCell = algorithmPath[i];
-                    var prevCell = algorithmPath[i - 1];
-                    var rc = new RectangleF();
-                    if (actCell.Y == prevCell.Y)
-                    {
-                        rc.X = Math.Min(prevCell.X, actCell.X);
-                        rc.Y = actCell.Y;
-                        rc.Width = 1 + chamberSize;
-                        rc.Height = chamberSize;
-                    }
-                    else
-                    {
-                        rc.Y = Math.Min(prevCell.Y, actCell.Y);
-                        rc.X = actCell.X;
-                        rc.Height = 1 + chamberSize;
-                        rc.Width = chamberSize;
-                    }
-                    e.Graphics.FillRectangle(bfsBrush, rc);
-                }
+                    e.Graphics.FillRectangle(AlgoBrush, SegmentRect(algorithmPath[i - 1], algorithmPath[i], chamberSize));
             }
-            var startBrush = new SolidBrush(Color.LimeGreen);
-            var endBrush = new SolidBrush(Color.Gold);
-            var eventsBrush = new SolidBrush(Color.Red);
-            var rc_S = new RectangleF(StartCell.X, StartCell.Y, chamberSize, chamberSize);
-            var rc_E = new RectangleF(EndCell.X, EndCell.Y, chamberSize, chamberSize);
-            e.Graphics.FillRectangle(endBrush, rc_E);
-            e.Graphics.FillRectangle(startBrush, rc_S);
+            e.Graphics.FillRectangle(EndBrush, new RectangleF(EndCell.X, EndCell.Y, chamberSize, chamberSize));
+            e.Graphics.FillRectangle(StartBrush, new RectangleF(StartCell.X, StartCell.Y, chamberSize, chamberSize));
             foreach (var events in EventCell)
-            {
-                var rc_Events = new RectangleF(events.X, events.Y, chamberSize, chamberSize);
-                e.Graphics.FillRectangle(eventsBrush, rc_Events);
-            }
+                e.Graphics.FillRectangle(EventBrush, new RectangleF(events.X, events.Y, chamberSize, chamberSize));
         }
     }
 }
