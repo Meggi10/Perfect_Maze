@@ -34,7 +34,6 @@ namespace Perfect_maze
         private static readonly Brush StartBrush = new SolidBrush(Color.LimeGreen);
         private static readonly Brush EndBrush = new SolidBrush(Color.Gold);
         private static readonly Brush EventBrush = new SolidBrush(Color.Red);
-        private static readonly Brush AlgoBrush = new SolidBrush(Color.FromArgb(255, Color.DeepSkyBlue));
         private Brush ForeBrush = new SolidBrush(Color.Black);
         private const int SnakeLength = 4;
         private static readonly Brush[] FadeBrush = Enumerable.Range(0, 11).Select(i => (Brush)new SolidBrush(Color.FromArgb(i * 25, Color.DeepSkyBlue))).ToArray();
@@ -46,7 +45,6 @@ namespace Perfect_maze
         private bool FirstMove = true;
         public bool Reverse { get; set; } = false;
         public bool AlgoAnimDone => AnimAlgoritmStep >= algorithmPath.Count + SnakeLength;
-
         public TBoard()
         {
             InitializeComponent();
