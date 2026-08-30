@@ -51,7 +51,7 @@ namespace Perfect_maze
         {
             if (algorithmFlag)
             {
-                if (tBoard1.BfsAnimDone) { timer1.Stop(); return; }
+                if (tBoard1.AlgoAnimDone) { timer1.Stop(); return; }
 
                 tBoard1.AnimAlgoritmStep++;
                 tBoard1.Invalidate();
