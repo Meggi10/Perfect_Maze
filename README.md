@@ -5,15 +5,14 @@ This project is an updated version of a simple maze generator based on the <b>DF
 <br>
 <b><h2>Features</h2></b>
 <ul>
-  <li>Maze generation using <b>DFS</b> (from start to end and from end to start).</li>
+  <li>Maze generation using <b>DFS</b> (Reveal and Rewind) - color change.</li>
   <li>Player name input with saving it in active session.</li>
   <li>Player and finish cells.</li>
   <li>Event cells that increase the player's score.</li>
   <li>Locked exit that unlocks only after all event cells have been collected.</li>
   <li>Escape path visualization using <b>BFS (Breadth-First Search)</b> and <b>A*</b> algorithms.</li>
-  <li>Path animation reversal.</li>
   <li>Difficulty level selection before jump into the game.</li>
-  <li>Simple graphical user interface.</li>
+  <li>Simple graphical User Interface.</li>
   <li>In-game background music.</li>
   <li>Random teleport event for each difficulty level.</li>
   <li>Scoreboard section without saved times for now.</li>
