@@ -36,6 +36,8 @@ namespace Perfect_maze
         private static readonly Brush EventBrush = new SolidBrush(Color.Red);
         private static readonly Brush AlgoBrush = new SolidBrush(Color.FromArgb(255, Color.DeepSkyBlue));
         private Brush ForeBrush = new SolidBrush(Color.Black);
+        private const int SnakeLength = 4;
+        private static readonly Brush[] FadeBrush = Enumerable.Range(0, 11).Select(i => (Brush)new SolidBrush(Color.FromArgb(i * 25, Color.DeepSkyBlue))).ToArray();
         public int PathCount;
         public int score = 0;
         public int AnimAlgoritmStep = 0;
@@ -43,7 +45,7 @@ namespace Perfect_maze
         private bool IsTeleport;
         private bool FirstMove = true;
         public bool Reverse { get; set; } = false;
-        public bool BfsAnimDone => AnimAlgoritmStep >= algorithmPath.Count;
+        public bool AlgoAnimDone => AnimAlgoritmStep >= algorithmPath.Count + SnakeLength;
 
         public TBoard()
         {
@@ -235,8 +237,15 @@ namespace Perfect_maze
                 e.Graphics.FillRectangle(ForeBrush, SegmentRect(Path[i - 1], Path[i], chamberSize));
             if (algorithmPath.Count > 1)
             {
-                for (int i = 1; i < AnimAlgoritmStep; i++)
-                    e.Graphics.FillRectangle(AlgoBrush, SegmentRect(algorithmPath[i - 1], algorithmPath[i], chamberSize));
+                int end = Math.Min(AnimAlgoritmStep, algorithmPath.Count);
+                int start = Math.Max(1, AnimAlgoritmStep - SnakeLength);
+                start = Math.Min(start, algorithmPath.Count);
+                for (int i = Math.Max(1, start); i < end; i++)
+                {
+                    float t = (i - start + 1) / (float)SnakeLength;
+                    int alpha = (int)(10 * t);
+                    e.Graphics.FillRectangle(FadeBrush[alpha], SegmentRect(algorithmPath[i - 1], algorithmPath[i], chamberSize));
+                }
             }
             e.Graphics.FillRectangle(EndBrush, new RectangleF(EndCell.X, EndCell.Y, chamberSize, chamberSize));
             e.Graphics.FillRectangle(StartBrush, new RectangleF(StartCell.X, StartCell.Y, chamberSize, chamberSize));
