@@ -97,7 +97,7 @@
             this.button1.Padding = new System.Windows.Forms.Padding(3);
             this.button1.Size = new System.Drawing.Size(143, 38);
             this.button1.TabIndex = 11;
-            this.button1.Text = "Play Game";
+            this.button1.Text = "Next";
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
