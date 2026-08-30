@@ -67,7 +67,7 @@
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(103, 23);
             this.button1.TabIndex = 1;
-            this.button1.Text = "Creation Path - DFS";
+            this.button1.Text = "DFS Reveal";
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
@@ -77,9 +77,9 @@
             this.button2.FlatStyle = System.Windows.Forms.FlatStyle.System;
             this.button2.Location = new System.Drawing.Point(1441, 80);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(103, 37);
+            this.button2.Size = new System.Drawing.Size(103, 24);
             this.button2.TabIndex = 2;
-            this.button2.Text = "Reverse Creation Path - DFS";
+            this.button2.Text = "DFS Rewind";
             this.button2.UseVisualStyleBackColor = true;
             this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
@@ -87,7 +87,7 @@
             // 
             this.button3.Cursor = System.Windows.Forms.Cursors.Hand;
             this.button3.FlatStyle = System.Windows.Forms.FlatStyle.System;
-            this.button3.Location = new System.Drawing.Point(1440, 131);
+            this.button3.Location = new System.Drawing.Point(1440, 115);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(103, 25);
             this.button3.TabIndex = 3;
@@ -144,7 +144,7 @@
             // 
             this.button4.Cursor = System.Windows.Forms.Cursors.Hand;
             this.button4.FlatStyle = System.Windows.Forms.FlatStyle.System;
-            this.button4.Location = new System.Drawing.Point(1440, 171);
+            this.button4.Location = new System.Drawing.Point(1440, 151);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(103, 25);
             this.button4.TabIndex = 8;
