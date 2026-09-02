@@ -20,7 +20,7 @@ This project is an updated version of a simple maze generator based on the <b>DF
   <li>Protection against the forbidden words.</li>
   <li>Random player name generator.</li>
   <li>Player sessions to enable saving — saving is not implemented yet.</li>
-  <li>Option to select one of two available modes: Speedrun or Fog of War — the modes do not have any logic implemented yet.</li>
+  <li>Option to select one of three available modes: Speedrun (the mode do not have any logic implemented yet), Map Reveal or Fog of War (the mode do not have any logic implemented yet).</li>
 </ul>
 
 <b><h2>Currently under development</h2></b>
@@ -29,9 +29,11 @@ This project is an updated version of a simple maze generator based on the <b>DF
   <li>Further UI improvements.</li>
   <li>Implementing Fog of War mode logic.</li>
   <li>Improving Speedrun mode.</li>
+  <li>Improving Map Reveal mode.</li>
   <li>Improvements for Scoreboard section with best times for each difficulty level.</li>
   <li>Improvements for binding player name with level difficulty, mode and achieved time during active session.</li>
   <li>Allowing objects to move independently of the grid within corridors.</li>
+  <li>Possible local achivement system.</li>
   <li>Additional music tracks and sound effects.</li>
   <li>Program documentation.</li>
 </ul>
