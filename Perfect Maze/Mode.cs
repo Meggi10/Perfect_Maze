@@ -24,7 +24,7 @@ namespace Perfect_maze
 
         private void button3_Click(object sender, EventArgs e)
         {
-            if (radioButton1.Checked == true || radioButton2.Checked == true)
+            if (radioButton1.Checked == true || radioButton2.Checked == true || radioButton3.Checked == true)
                 Next();
         }
 
@@ -38,6 +38,10 @@ namespace Perfect_maze
             TSession.Mode = TSession.Modes.FogOfWar;
         }
 
+        private void radioButton3_CheckedChanged(object sender, EventArgs e)
+        {
+            TSession.Mode = TSession.Modes.MapReveal;
+        }
         private void Next()
         {
             DiffLvls diflvl = new DiffLvls();
