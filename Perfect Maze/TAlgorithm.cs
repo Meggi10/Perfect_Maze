@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel.Design.Serialization;
+using System.Drawing;
 using System.IO;
 using System.Linq;
 using System.Runtime.InteropServices;
@@ -118,6 +119,34 @@ namespace Perfect_maze
                 }
             }
             return path;
+        }
+        public static List<Point> Bresenham(int x0, int y0, int x1, int y1)
+        {
+            var points = new List<Point>();
+            int dx = Math.Abs(x1 - x0);
+            int dy = Math.Abs(y1 - y0);
+            int dirStepX = x0 < x1 ? 1 : -1;
+            int dirStepY = y0 < y1 ? 1 : -1;
+            int error = dx - dy;
+            int x = x0, y = y0;
+
+            while (true)
+            {
+                points.Add(new Point(x, y));
+                if (x == x1 && y == y1) break;
+                int doubleError = 2 * error;
+                if (doubleError > -dy)
+                {
+                    error -= dy;
+                    x += dirStepX;
+                }
+                if (doubleError < dx)
+                {
+                    error += dx;
+                    y += dirStepY;
+                }
+            }
+            return points;
         }
         private static List<TCell> ReconstructPath(Dictionary<TCell, TCell> cameFrom, TCell goal)
         {
