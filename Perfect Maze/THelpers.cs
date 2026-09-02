@@ -16,6 +16,8 @@ namespace Perfect_maze
                     return "Speedrun";
                 case TSession.Modes.FogOfWar:
                     return "Fog Of War";
+                case TSession.Modes.MapReveal:
+                    return "Map Reveal";
                 default:
                     return mode.ToString();
             }

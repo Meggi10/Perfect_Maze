@@ -11,7 +11,7 @@ namespace Perfect_maze
         public static string PlayerName { get; set; }
         public static Modes Mode { get; set; }
         public static DiffLvls DifficultyLvl { get; set; }
-        public enum Modes { Speedrun, FogOfWar}
+        public enum Modes { Speedrun, FogOfWar, MapReveal}
         public enum DiffLvls { Easy, Normal, Hard}
         public static void Clear()
         {
