@@ -26,10 +26,10 @@ namespace Perfect_maze
         public event Action AllPointsCollected;
         public event Action GameReset;
         public event Action PlayerMove;
-        public static int N;
+        public static int N = 30;
         public static float chamberSize = 0.9f;
-        public static int EventCount;
-        public static int SpecialEventCount;
+        public static int EventCount = 15;
+        public static int SpecialEventCount = 3;
         private static readonly Brush ReverseBrush = new SolidBrush(Color.Gray);
         private static readonly Brush StartBrush = new SolidBrush(Color.LimeGreen);
         private static readonly Brush EndBrush = new SolidBrush(Color.Gold);
