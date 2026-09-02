@@ -31,6 +31,7 @@ This project is an updated version of a simple maze generator based on the <b>DF
   <li>Improving Speedrun mode.</li>
   <li>Improvements for Scoreboard section with best times for each difficulty level.</li>
   <li>Improvements for binding player name with level difficulty, mode and achieved time during active session.</li>
+  <li>Allowing objects to move independently of the grid within corridors.</li>
   <li>Additional music tracks and sound effects.</li>
   <li>Program documentation.</li>
 </ul>
