@@ -171,6 +171,7 @@
       <DependentUpon>TBoard.cs</DependentUpon>
     </Compile>
     <Compile Include="TCell.cs" />
+    <Compile Include="TMapRevealManager.cs" />
     <Compile Include="TGameSoundtrack.cs" />
     <Compile Include="THelpers.cs" />
     <Compile Include="TLoopStream.cs" />

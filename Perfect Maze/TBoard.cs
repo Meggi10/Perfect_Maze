@@ -43,6 +43,7 @@ namespace Perfect_maze
         public float time;
         private bool IsTeleport;
         private bool FirstMove = true;
+        public TMapRevealManager MapReveal;
         public bool Reverse { get; set; } = false;
         public bool AlgoAnimDone => AnimAlgoritmStep >= algorithmPath.Count + SnakeLength;
         public TBoard()
@@ -69,6 +70,14 @@ namespace Perfect_maze
             PathCount = Path.Count;
             score = 0;
             ScoreChanged?.Invoke(score);
+
+            if (TSession.Mode == TSession.Modes.MapReveal)
+            {
+                MapReveal = new TMapRevealManager(N, r: 3);
+                MapReveal.RevealArea(StartCell.X, StartCell.Y, Cells);
+            }
+            else
+                MapReveal = null;
         }
 
         protected override void OnPreviewKeyDown(PreviewKeyDownEventArgs e)
@@ -107,6 +116,7 @@ namespace Perfect_maze
                         PlayerMove?.Invoke();
                     }
                     StartCell = neighbour;
+                    MapReveal?.RevealArea(StartCell.X, StartCell.Y, Cells);
                     if (EventCell.Contains(StartCell) && neighbour != EndCell)
                     {
                         IsTeleport = SpecialCell.Contains(StartCell);
@@ -188,6 +198,13 @@ namespace Perfect_maze
             Path = TAlgorithm.GenerationMazeDFS(Cells, N, StartCell, Rnd);
             PathCount = Path.Count - 1;
             FirstMove = true;
+            if (TSession.Mode == TSession.Modes.MapReveal)
+            {
+                MapReveal = new TMapRevealManager(N, r: 3);
+                MapReveal.RevealArea(StartCell.X, StartCell.Y, Cells);
+            }
+            else
+                MapReveal = null;
         }
 
         protected override void OnForeColorChanged(EventArgs e)
@@ -226,13 +243,24 @@ namespace Perfect_maze
             var offset = (1 - chamberSize) / 2;
             e.Graphics.ScaleTransform(cellW, cellH);
             e.Graphics.TranslateTransform(offset, offset);
+            bool HiddenMap = MapReveal != null;
             if (Reverse)
             {
                 for (int i = 1; i < Path.Count; i++)
+                {
+                    if (HiddenMap && (!MapReveal.IsVisible(Path[i - 1].X, Path[i - 1].Y) || !MapReveal.IsVisible(Path[i].X, Path[i].Y)))
+                        continue;
+
                     e.Graphics.FillRectangle(ReverseBrush, SegmentRect(Path[i - 1], Path[i], chamberSize));
+                }
             }
             for (int i = 1; i < PathCount; i++)
+            {
+                if (HiddenMap && (!MapReveal.IsVisible(Path[i - 1].X, Path[i - 1].Y) || !MapReveal.IsVisible(Path[i].X, Path[i].Y)))
+                    continue;
+
                 e.Graphics.FillRectangle(ForeBrush, SegmentRect(Path[i - 1], Path[i], chamberSize));
+            }
             if (algorithmPath.Count > 1)
             {
                 int end = Math.Min(AnimAlgoritmStep, algorithmPath.Count);
@@ -245,10 +273,17 @@ namespace Perfect_maze
                     e.Graphics.FillRectangle(FadeBrush[alpha], SegmentRect(algorithmPath[i - 1], algorithmPath[i], chamberSize));
                 }
             }
-            e.Graphics.FillRectangle(EndBrush, new RectangleF(EndCell.X, EndCell.Y, chamberSize, chamberSize));
+            if (!HiddenMap || MapReveal.IsVisible(EndCell.X, EndCell.Y))
+                e.Graphics.FillRectangle(EndBrush, new RectangleF(EndCell.X, EndCell.Y, chamberSize, chamberSize));
             e.Graphics.FillRectangle(StartBrush, new RectangleF(StartCell.X, StartCell.Y, chamberSize, chamberSize));
+
             foreach (var events in EventCell)
+            {
+                if (HiddenMap && !MapReveal.IsVisible(events.X, events.Y))
+                    continue;
+
                 e.Graphics.FillRectangle(EventBrush, new RectangleF(events.X, events.Y, chamberSize, chamberSize));
+            }
         }
     }
 }
