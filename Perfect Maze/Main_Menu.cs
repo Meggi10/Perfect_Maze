@@ -36,11 +36,6 @@ namespace Perfect_maze
             Hide();
         }
 
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void button3_Click(object sender, EventArgs e)
         {
             DialogResult result = MessageBox.Show(
@@ -64,6 +59,11 @@ namespace Perfect_maze
             Scoreboard scoreboard = new Scoreboard();
             scoreboard.Show();
             Hide();
+        }
+
+        private void button6_Click(object sender, EventArgs e)
+        {
+            //...
         }
     }
 }
