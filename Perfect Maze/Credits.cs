@@ -15,7 +15,7 @@ namespace Perfect_maze
         public Credits()
         {
             InitializeComponent();
-            
+            TextSettings();
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -25,9 +25,11 @@ namespace Perfect_maze
             Hide();
         }
 
-        private void textBox1_TextChanged(object sender, EventArgs e)
+        private void TextSettings()
         {
-
+            richTextBox1.SelectAll();
+            richTextBox1.SelectionAlignment = HorizontalAlignment.Center;
+            richTextBox1.DeselectAll();
         }
     }
 }
