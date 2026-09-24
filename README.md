@@ -26,7 +26,7 @@ This project is an updated version of a simple maze generator based on the <b>DF
 <b><h2>Currently under development</h2></b>
 <ul>
   <li>Further improvements and expansion of the <b>Game Rules</b> section.</li>
-  <li>Further UI improvements.</li>
+  <li>Further UI improvements - preparing game for fullscreen.</li>
   <li>Implementing Fog of War mode logic.</li>
   <li>Improving Speedrun mode.</li>
   <li>Improving Map Reveal mode.</li>
