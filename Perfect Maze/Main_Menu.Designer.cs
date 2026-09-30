@@ -46,9 +46,9 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.button1.Cursor = System.Windows.Forms.Cursors.Hand;
             this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 27.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.button1.Location = new System.Drawing.Point(88, 103);
+            this.button1.Location = new System.Drawing.Point(195, 251);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(297, 56);
+            this.button1.Size = new System.Drawing.Size(287, 78);
             this.button1.TabIndex = 0;
             this.button1.Text = "Play";
             this.button1.UseVisualStyleBackColor = true;
@@ -61,9 +61,9 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.button2.Cursor = System.Windows.Forms.Cursors.Hand;
             this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 27.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.button2.Location = new System.Drawing.Point(88, 219);
+            this.button2.Location = new System.Drawing.Point(195, 367);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(297, 56);
+            this.button2.Size = new System.Drawing.Size(287, 78);
             this.button2.TabIndex = 1;
             this.button2.Text = "Game rules";
             this.button2.UseVisualStyleBackColor = true;
@@ -76,9 +76,9 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.button3.Cursor = System.Windows.Forms.Cursors.Hand;
             this.button3.Font = new System.Drawing.Font("Microsoft Sans Serif", 27.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.button3.Location = new System.Drawing.Point(659, 327);
+            this.button3.Location = new System.Drawing.Point(766, 475);
             this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(297, 56);
+            this.button3.Size = new System.Drawing.Size(287, 78);
             this.button3.TabIndex = 3;
             this.button3.Text = "Exit";
             this.button3.UseVisualStyleBackColor = true;
@@ -91,9 +91,9 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.button4.Cursor = System.Windows.Forms.Cursors.Hand;
             this.button4.Font = new System.Drawing.Font("Microsoft Sans Serif", 27.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.button4.Location = new System.Drawing.Point(88, 327);
+            this.button4.Location = new System.Drawing.Point(195, 475);
             this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(297, 56);
+            this.button4.Size = new System.Drawing.Size(287, 78);
             this.button4.TabIndex = 4;
             this.button4.Text = "Credits";
             this.button4.UseVisualStyleBackColor = true;
@@ -106,9 +106,9 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.button5.Cursor = System.Windows.Forms.Cursors.Hand;
             this.button5.Font = new System.Drawing.Font("Microsoft Sans Serif", 27.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.button5.Location = new System.Drawing.Point(659, 219);
+            this.button5.Location = new System.Drawing.Point(766, 367);
             this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(297, 56);
+            this.button5.Size = new System.Drawing.Size(287, 78);
             this.button5.TabIndex = 5;
             this.button5.Text = "Scoreboard";
             this.button5.UseVisualStyleBackColor = true;
@@ -121,9 +121,9 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.button6.Cursor = System.Windows.Forms.Cursors.Hand;
             this.button6.Font = new System.Drawing.Font("Microsoft Sans Serif", 27.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.button6.Location = new System.Drawing.Point(659, 103);
+            this.button6.Location = new System.Drawing.Point(766, 251);
             this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(297, 56);
+            this.button6.Size = new System.Drawing.Size(287, 78);
             this.button6.TabIndex = 6;
             this.button6.Text = "Options";
             this.button6.UseVisualStyleBackColor = true;
@@ -131,13 +131,11 @@
             // 
             // label2
             // 
-            this.label2.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.label2.Font = new System.Drawing.Font("Bell MT", 72F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(68, 30);
+            this.label2.Dock = System.Windows.Forms.DockStyle.Top;
+            this.label2.Font = new System.Drawing.Font("Bell MT", 84.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(0, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(1301, 96);
+            this.label2.Size = new System.Drawing.Size(1251, 160);
             this.label2.TabIndex = 7;
             this.label2.Text = "Maze The Game";
             this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -145,15 +143,17 @@
             // panel1
             // 
             this.panel1.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel1.Controls.Add(this.label2);
             this.panel1.Controls.Add(this.button6);
             this.panel1.Controls.Add(this.button1);
             this.panel1.Controls.Add(this.button5);
             this.panel1.Controls.Add(this.button2);
             this.panel1.Controls.Add(this.button4);
             this.panel1.Controls.Add(this.button3);
-            this.panel1.Location = new System.Drawing.Point(178, 186);
+            this.panel1.Location = new System.Drawing.Point(65, 63);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1091, 524);
+            this.panel1.Size = new System.Drawing.Size(1253, 705);
             this.panel1.TabIndex = 8;
             // 
             // Main_Menu
@@ -162,7 +162,6 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1443, 819);
             this.ControlBox = false;
-            this.Controls.Add(this.label2);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Main_Menu";
